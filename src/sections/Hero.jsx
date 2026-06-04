@@ -56,9 +56,13 @@ const Hero = () => {
             <a href="#projects" className="px-6 py-3 bg-cyan-500 hover:bg-cyan-600 text-white font-medium rounded-lg transition-colors">
               Lihat Project
             </a>
-            <button className="px-6 py-3 border border-slate-700 hover:border-cyan-400 text-slate-300 hover:text-cyan-400 font-medium rounded-lg transition-colors">
+            <a 
+              href="/CV_Akmal_Shaum.pdf" 
+              download="CV_Akmal_Shaum_Nadzirin.pdf"
+              className="px-6 py-3 border border-slate-700 hover:border-cyan-400 text-slate-300 hover:text-cyan-400 font-medium rounded-lg transition-colors inline-flex items-center justify-center"
+            >
               Download CV
-            </button>
+            </a>
           </motion.div>
         </motion.div>
 
