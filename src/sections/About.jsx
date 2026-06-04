@@ -17,7 +17,7 @@ const About = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           className="md:col-span-2 bg-slate-800/40 border border-slate-700 rounded-3xl p-8 hover:border-cyan-400/30 transition-colors"
         >
           <h3 className="text-2xl font-bold text-white mb-4">Mahasiswa & <span className="text-cyan-400">Tech Enthusiast</span></h3>
@@ -33,7 +33,7 @@ const About = () => {
         <motion.div 
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true }}
+          viewport={{ once: false, amount: 0.2 }}
           transition={{ delay: 0.2 }}
           className="bg-slate-800/40 border border-slate-700 rounded-3xl p-8 hover:border-emerald-400/30 transition-colors flex flex-col justify-center"
         >

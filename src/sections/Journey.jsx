@@ -23,7 +23,7 @@ const Journey = () => {
                 key={index}
                 initial={{ opacity: 0, x: -20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 className="relative pl-8"
               >
                 {/* Bulatan di garis timeline */}
@@ -52,7 +52,7 @@ const Journey = () => {
                 key={index}
                 initial={{ opacity: 0, x: 20 }}
                 whileInView={{ opacity: 1, x: 0 }}
-                viewport={{ once: true }}
+                viewport={{ once: false, amount: 0.2 }}
                 className="relative pl-8"
               >
                 <div className="absolute -left-[9px] top-1 w-4 h-4 bg-slate-900 border-2 border-emerald-500 rounded-full"></div>

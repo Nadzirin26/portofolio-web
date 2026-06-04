@@ -19,7 +19,7 @@ const Projects = () => {
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.5, delay: index * 0.1 }}
-            viewport={{ once: true, margin: "-50px" }}
+            viewport={{ once: false, amount: 0.2 }}
             className="bg-slate-800/40 border border-slate-700 rounded-xl overflow-hidden hover:border-cyan-400/50 hover:shadow-[0_0_15px_rgba(6,182,212,0.2)] transition-all duration-300 group flex flex-col"
           >
             {/* Bagian Gambar */}
