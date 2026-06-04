@@ -1,0 +1,7 @@
+@import "tailwindcss";
+
+/* Tambahkan pengaturan scroll ini */
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px; /* Biar judul section nggak ketutupan navbar */
+}
