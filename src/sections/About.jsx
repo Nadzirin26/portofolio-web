@@ -22,10 +22,10 @@ const About = () => {
         >
           <h3 className="text-2xl font-bold text-white mb-4">Mahasiswa & <span className="text-cyan-400">Tech Enthusiast</span></h3>
           <p className="text-slate-400 leading-relaxed mb-4">
-            Saat ini saya sedang menempuh pendidikan S1 Teknik Informatika di Universitas Dian Nuswantoro (UDINUS), Semarang. Saya memiliki ketertarikan yang mendalam pada pengembangan perangkat lunak, mulai dari Web Development, integrasi Internet of Things (IoT), hingga eksplorasi Machine Learning dan Computer Vision.
+            Halo! Saya Akmal, mahasiswa S1 Teknik Informatika di Universitas Dian Nuswantoro (UDINUS), Semarang. Saya sangat menikmati proses kreatif di balik layar, terutama yang berkaitan dengan <b>Web</b> dan <b>Mobile Development</b>. Bagi saya, <i>ngoding</i> itu bukan sekadar menulis sintaks, tapi tentang bagaimana menciptakan solusi digital yang praktis dan beneran ngebantu masalah orang lain.
           </p>
           <p className="text-slate-400 leading-relaxed">
-            Di luar pengembangan aplikasi utama, saya juga antusias mempelajari seputar keamanan siber dan kriptografi. Kalau lagi nggak di depan layar, saya biasanya menjaga fisik dan mental dengan aktif olahraga bulutangkis.
+            Selain asyik ngebangun aplikasi, saya juga lumayan sering <i>ngulik</i> hal-hal berbau keamanan data dan kriptografi. Nah, biar hidup nggak melulu dihabiskan menatap layar monitor, saya rutin meluangkan waktu buat aktif di UKM Bulutangkis. Intinya, harus ada keseimbangan antara ngasah logika dan jaga fisik!
           </p>
         </motion.div>
 
