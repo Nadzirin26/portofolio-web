@@ -28,16 +28,16 @@ const Hero = () => {
   return (
     <section className="min-h-screen flex items-center pt-20 pb-10">
       
-      {/* Container Grid Utama */}
+      {/* Container utama: Flex-col di HP, Grid di Desktop */}
       <motion.div 
         variants={containerVariants}
         initial="hidden"
         animate="visible"
-        className="w-full grid grid-cols-1 md:grid-cols-2 md:grid-rows-[auto_auto] gap-y-8 md:gap-y-6 md:gap-x-12 items-center"
+        className="w-full flex flex-col md:grid md:grid-cols-2 gap-y-6 md:gap-x-12"
       >
         
-        {/* 1. BLOK TEKS (Urutan 1 di HP | Posisi Kiri Atas di Laptop) */}
-        <div className="order-1 md:col-start-1 md:row-start-1 space-y-4 md:space-y-6 flex flex-col justify-end mt-8 md:mt-0">
+        {/* 1. BLOK HEADER (Nama & Role) - Urutan 1 di HP | Kiri Atas di Laptop */}
+        <div className="order-1 md:col-start-1 md:row-start-1 space-y-4 md:space-y-6 mt-8 md:mt-0">
           <motion.p variants={itemVariants} className="text-cyan-400 font-medium text-sm md:text-base">
             Halo, selamat datang di portofolio saya.
           </motion.p>
@@ -52,18 +52,14 @@ const Hero = () => {
           <motion.h2 variants={itemVariants} className="text-xl md:text-2xl text-slate-400 font-medium">
             {personalInfo.role}
           </motion.h2>
-          
-          <motion.p variants={itemVariants} className="text-slate-400 leading-relaxed max-w-lg text-sm md:text-base text-justify md:text-left">
-            Fokus mendalami pengembangan aplikasi Web & Mobile, serta antusias mengeksplorasi keamanan data digital untuk menciptakan solusi yang inovatif.
-          </motion.p>
         </div>
 
-        {/* 2. BLOK FOTO (Urutan 2 di HP | Posisi Kanan Full di Laptop) */}
+        {/* 2. BLOK FOTO - Urutan 2 di HP (Di Bawah Role) | Kanan Full di Laptop */}
         <motion.div 
           initial={{ opacity: 0, scale: 0.5, rotate: -10 }}
           animate={{ opacity: 1, scale: 1, rotate: 0 }}
           transition={{ duration: 0.8, delay: 0.5, type: "spring", stiffness: 60 }}
-          className="order-2 md:col-start-2 md:row-span-2 relative flex justify-center py-2 md:py-0"
+          className="order-2 md:col-start-2 md:row-start-1 md:row-span-3 relative flex justify-center py-4 md:py-0 md:self-center"
         >
           <div className="w-64 h-64 sm:w-72 sm:h-72 md:w-96 md:h-96 rounded-full border-4 border-slate-800 shadow-[0_0_40px_rgba(6,182,212,0.15)] overflow-hidden relative group bg-slate-800">
              <img 
@@ -75,10 +71,18 @@ const Hero = () => {
           </div>
         </motion.div>
 
-        {/* 3. BLOK TOMBOL (Urutan 3 di HP | Posisi Kiri Bawah di Laptop) */}
+        {/* 3. BLOK DESKRIPSI - Urutan 3 di HP | Kiri Tengah di Laptop */}
+        <motion.p 
+          variants={itemVariants} 
+          className="order-3 md:col-start-1 md:row-start-2 text-slate-400 leading-relaxed max-w-lg text-sm md:text-base text-justify md:text-left"
+        >
+          Fokus mendalami pengembangan aplikasi Web & Mobile, serta antusias mengeksplorasi keamanan data digital untuk menciptakan solusi yang inovatif.
+        </motion.p>
+
+        {/* 4. BLOK TOMBOL - Urutan 4 di HP | Kiri Bawah di Laptop */}
         <motion.div 
           variants={itemVariants} 
-          className="order-3 md:col-start-1 md:row-start-2 flex gap-3 md:gap-4 flex-row w-full md:w-auto md:justify-start"
+          className="order-4 md:col-start-1 md:row-start-3 flex gap-3 md:gap-4 flex-row w-full md:w-auto md:justify-start pt-2 md:pt-0"
         >
           <a 
             href="#projects" 
