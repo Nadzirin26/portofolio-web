@@ -9,18 +9,18 @@
         * { box-sizing: border-box; margin: 0; padding: 0; font-family: 'Inter', sans-serif; }
         body { background: #52525b; display: flex; justify-content: center; padding: 20px; color: #111827; }
         
-        /* Container 2 Halaman A4 */
+                /* Container 2 Halaman A4 */
         .cv-container { 
             width: 210mm; 
             background: #fff; 
-            padding: 60px 65px; 
+            padding: 40px 55px; 
             box-shadow: 0 10px 30px rgba(0,0,0,0.3); 
         }
         
-        .header { text-align: center; margin-bottom: 25px; }
+        .header { text-align: center; margin-bottom: 12px; }
         .header h1 { font-size: 28px; font-weight: 700; text-transform: uppercase; margin-bottom: 8px; letter-spacing: 1px; color: #000; }
-        .summary { text-align: justify; font-size: 12px; margin-bottom: 12px; line-height: 1.6; color: #374151; }
-        .contact { font-size: 11.5px; margin-bottom: 15px; color: #111827; }
+        .summary { text-align: justify; font-size: 12px; margin-bottom: 8px; line-height: 1.45; color: #374151; }
+        .contact { font-size: 11.5px; margin-bottom: 10px; color: #111827; }
         .contact a { color: #111827; text-decoration: none; font-weight: 600; }
         
         .section-title { 
@@ -28,24 +28,30 @@
             font-weight: 700; 
             text-transform: uppercase; 
             border-bottom: 1.5px solid #111827; 
-            margin-bottom: 12px; 
+            margin-bottom: 6px; 
             padding-bottom: 4px; 
-            margin-top: 24px; 
+            margin-top: 14px; 
             color: #000;
         }
         
-        .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-top: 8px; }
+        .item-header { display: flex; justify-content: space-between; align-items: baseline; margin-top: 4px; }
         .item-title { font-weight: 700; font-size: 13px; color: #000; }
         .item-title a { color: #111827; text-decoration: none; border-bottom: 1px dashed #6b7280; transition: color 0.2s, border-color 0.2s; }
         .item-title a:hover { color: #0891b2; border-bottom-color: #0891b2; }
         .item-date { font-size: 11.5px; font-weight: 600; color: #374151; }
         .item-subtitle { font-weight: 600; font-size: 12px; font-style: italic; margin-top: 2px; color: #4b5563; }
         
-        .item-desc { font-size: 11.5px; padding-left: 18px; margin-top: 5px; margin-bottom: 12px; line-height: 1.6; color: #374151; }
+        .item-desc { font-size: 11.5px; padding-left: 18px; margin-top: 5px; margin-bottom: 6px; line-height: 1.45; color: #374151; }
         .item-desc li { margin-bottom: 4px; }
         
         .skills-list { font-size: 12px; line-height: 1.8; color: #111827; }
         .skills-list span { font-weight: 700; display: inline-block; width: 140px; color: #000;}
+
+        /* Mencegah pemotongan item gantung di tengah-tengah halaman */
+        .item-header, .item-subtitle, .item-desc, .skills-list {
+            page-break-inside: avoid;
+            break-inside: avoid;
+        }
 
         /* Trik CSS biar halaman kedua terpotong rapi saat diprint */
         .page-break { page-break-before: always; }
@@ -54,7 +60,7 @@
             body { padding: 0; background: #fff; display: block; }
             .cv-container { box-shadow: none; width: 100%; padding: 0; }
             * { -webkit-print-color-adjust: exact !important; print-color-adjust: exact !important; }
-            @page { size: A4; margin: 20mm 15mm; }
+            @page { size: A4; margin: 12mm 15mm; }
         }
     </style>
 </head>
@@ -78,7 +84,6 @@
             <div class="item-date">Sep 2023 - Sekarang</div>
         </div>
         <div class="item-subtitle">Sarjana Komputer (S1) - Teknik Informatika | IPK: 3.65 / 4.00 | Semarang, Jawa Tengah</div>
-        <br>
         <div class="item-header">
             <div class="item-title">SMA Kesatrian 01 Semarang</div>
             <div class="item-date">Lulus - 2023</div>
