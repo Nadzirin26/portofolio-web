@@ -17,14 +17,26 @@ const Navbar = () => {
     <nav className="fixed w-full z-50 top-0 left-0 bg-slate-900/90 backdrop-blur-md border-b border-slate-800">
       <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 py-4 flex justify-between items-center relative">
         
-        {/* Logo */}
         <motion.a 
           href="#home"
           whileHover={{ scale: 1.05 }}
           whileTap={{ scale: 0.95 }}
-          className="text-xl font-bold text-cyan-400 tracking-tighter hover:text-white transition-colors z-50"
+          className="flex items-center gap-2.5 text-xl font-bold tracking-tighter z-50 group"
         >
-          ASN.
+          <svg className="w-8 h-8 text-cyan-400 group-hover:scale-110 transition-transform duration-300" viewBox="0 0 100 100" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <defs>
+              <linearGradient id="logo-grad" x1="0%" y1="0%" x2="100%" y2="100%">
+                <stop offset="0%" stopColor="#22d3ee" />
+                <stop offset="100%" stopColor="#34d399" />
+              </linearGradient>
+            </defs>
+            {/* Hexagon Outline */}
+            <polygon points="50,12 88,32 88,68 50,88 12,68 12,32" stroke="url(#logo-grad)" strokeWidth="5" fill="none" />
+            {/* Inner Stylized ASN Monogram */}
+            <path d="M35,65 L50,32 L65,65 M42,52 L58,52" stroke="url(#logo-grad)" strokeWidth="6" strokeLinecap="round" strokeLinejoin="round" />
+            <circle cx="50" cy="32" r="5.5" fill="#34d399" />
+          </svg>
+          <span className="bg-gradient-to-r from-cyan-400 to-emerald-400 bg-clip-text text-transparent group-hover:from-white group-hover:to-cyan-400 transition-all duration-300">ASN.</span>
         </motion.a>
 
         {/* Tampilan Desktop */}
