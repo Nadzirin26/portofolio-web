@@ -35,7 +35,9 @@ const projectsData = [
     description: "Dashboard admin manajemen data akademik kampus terintegrasi. Mengimplementasikan autentikasi JWT dan rute terproteksi (Protected Route) menggunakan React Router, serta optimasi caching data menggunakan React Query untuk mempercepat responsivitas dan pemrosesan data hingga 30%. (Project Individu)",
     tech: ["React.js", "React Router", "TanStack Query", "Context API"],
     github: "https://github.com/Nadzirin26", 
-    labelButton: "Lihat di GitHub"
+    demo: "https://tugas-akhir-pemsik.vercel.app/",
+    labelGithub: "Lihat di GitHub",
+    labelDemo: "Kunjungi Website"
   },
   {
     id: 4,
