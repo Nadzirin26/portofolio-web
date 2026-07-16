@@ -1,36 +1,40 @@
 import React from 'react';
 import { motion } from 'framer-motion';
 
-// Data proyek yang sudah disinkronkan dengan CV terbaru (Termasuk Fish It Vercel Demo)
+// Data proyek yang disinkronkan 1-ke-1 dengan CV 10/10 dan dilengkapi tautan demo langsung
 const projectsData = [
   {
     id: 1,
     title: "Platform Fish It (E-Commerce & Komunitas)",
     category: "Web Development",
     image: "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=800&auto=format&fit=crop",
-    description: "Platform e-commerce dan forum diskusi interaktif yang dirancang khusus bagi komunitas pecinta ikan hias. Di project ini, saya ngebangun sisi frontend menggunakan React.js dan Tailwind CSS, serta CodeIgniter 4 (PHP) sebagai RESTful API backend, lengkap dengan analisis SWOT bisnis.",
-    tech: ["React.js", "Tailwind CSS", "PHP / CI4"],
-    github: "https://fishit-three.vercel.app/",
-    labelButton: "Kunjungi Website"
+    description: "Platform e-commerce dan wadah diskusi interaktif yang dirancang khusus bagi komunitas pecinta ikan hias. Saya membangun antarmuka frontend responsif menggunakan React.js dan Tailwind CSS, serta CodeIgniter 4 (PHP) untuk RESTful API backend, lengkap dengan perencanaan kelayakan bisnis SWOT. (Project Kolaboratif / UAS)",
+    tech: ["React.js", "Tailwind CSS", "PHP / CI4", "MySQL"],
+    github: "https://github.com/Nadzirin26",
+    demo: "https://fishit-three.vercel.app/",
+    labelGithub: "Lihat di GitHub",
+    labelDemo: "Kunjungi Website"
   },
   {
     id: 2,
     title: "Aplikasi Mobile POS: WarungKu",
     category: "Mobile App Development",
     image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=800&auto=format&fit=crop", 
-    description: "Berawal dari melihat warung konvensional yang pembukuannya sering berantakan, saya ngebangun aplikasi kasir (POS) ini dari nol. Nggak cuma buat nyatet stok dan scan barcode, aplikasi ini juga udah support pembayaran instan pakai QR Code buat ngebantu proses checkout jadi lebih sat-set.",
+    description: "Aplikasi kasir (Point of Sale) berbasis mobile untuk membantu digitalisasi dan pembukuan warung konvensional. Mengintegrasikan Supabase (database cloud) dan PostgreSQL, scanner barcode perangkat, serta sistem pembayaran instan simulasi QR Code untuk meningkatkan efisiensi waktu transaksi sebesar 40%. (Project Kolaboratif / Capstone)",
     tech: ["Flutter", "Provider", "Supabase", "PostgreSQL"],
     github: "https://github.com/Nadzirin26/warungku.git",
-    labelButton: "Lihat di GitHub"
+    demo: "https://youtu.be/HCL8jV37xwU?si=a-JArhm0oY6i5me8",
+    labelGithub: "Lihat di GitHub",
+    labelDemo: "Tonton Demo Video"
   },
   {
     id: 3,
     title: "Sistem Informasi Akademik (Admin Dashboard)",
     category: "Web Development",
     image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
-    description: "Project dashboard admin manajemen data akademik kampus. Di sini saya ngimplementasin sistem autentikasi login/register yang dikunci ketat pakai Protected Route, serta optimasi penarikan data dari server menggunakan React Query biar aplikasi kerasa enteng dan responsif.",
+    description: "Dashboard admin manajemen data akademik kampus terintegrasi. Mengimplementasikan autentikasi JWT dan rute terproteksi (Protected Route) menggunakan React Router, serta optimasi caching data menggunakan React Query untuk mempercepat responsivitas dan pemrosesan data hingga 30%. (Project Individu)",
     tech: ["React.js", "React Router", "TanStack Query", "Context API"],
-    github: "https://github.com/Nadzirin26/Tugas-Akhir-PEMSIK.git", 
+    github: "https://github.com/Nadzirin26", 
     labelButton: "Lihat di GitHub"
   },
   {
@@ -38,7 +42,7 @@ const projectsData = [
     title: "UI/UX GoTravel: Sistem Tiket Travel",
     category: "UI/UX Design",
     image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop",
-    description: "Desain antarmuka (Hi-Fi) aplikasi pemesanan travel berbasis mobile. Saya merancang arsitektur informasi dan user flow yang sangat detail dari awal, mulai dari penentuan rute armada, alur pemilihan kursi interaktif secara visual, hingga penerbitan tiket digital ber-QR Code.",
+    description: "Desain antarmuka (Hi-Fi) aplikasi pemesanan tiket travel berbasis mobile. Merancang arsitektur informasi dan user flow yang sangat detail, mulai dari pencarian rute, alur pemilihan kursi interaktif secara visual, pengisian manifes, hingga penerbitan tiket digital ber-QR Code di Figma. (Project Eksplorasi)",
     tech: ["Figma", "UI/UX Design", "Wireframing", "Prototyping"],
     github: "https://www.figma.com/design/TV8WImVbNcfBnTDvqfjNlF/Untitled?node-id=0-1",
     labelButton: "Lihat Desain Figma"
@@ -48,7 +52,7 @@ const projectsData = [
     title: "Kriptografi & Steganografi",
     category: "Data Security",
     image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-    description: "Ini hasil eksplorasi seru saya pas ngulik keamanan data digital. Saya bikin program buat nyembunyiin pesan rahasia ke dalam piksel gambar. Biar keamanannya ekstra dan nggak gampang dibobol, pesannya saya acak dulu pakai algoritma enkripsi berlapis (RSA & DES) sebelum diselipin ke gambarnya.",
+    description: "Program berbasis Python untuk menyembunyikan pesan rahasia ke dalam piksel gambar (Steganografi LSB). Untuk keamanan berlapis, pesan diacak terlebih dahulu menggunakan algoritma enkripsi hibrida RSA dan DES sebelum disisipkan ke dalam media gambar. (Project Akhir Mata Kuliah)",
     tech: ["Python", "RSA & DES", "LSB Steganography"],
     github: "https://colab.research.google.com/drive/1TrBjo8GJzR6Sq2StNsYYd3lr7lNeV2EL",
     labelButton: "Buka Google Colab"
@@ -101,14 +105,37 @@ const Projects = () => {
               </div>
               
               {/* Tombol Aksi Langsung Dinamis */}
-              <a 
-                href={project.github} 
-                target="_blank" 
-                rel="noreferrer"
-                className="mt-6 inline-block text-center w-full py-2 bg-slate-800 hover:bg-cyan-900/40 text-cyan-400 text-sm font-medium border border-cyan-900/50 hover:border-cyan-400 rounded-lg transition-all"
-              >
-                {project.labelButton}
-              </a>
+              <div className="flex gap-3 mt-6">
+                {project.demo ? (
+                  <>
+                    <a 
+                      href={project.github} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="flex-1 text-center py-2 bg-slate-900/60 hover:bg-slate-800 text-slate-300 text-xs sm:text-sm font-medium border border-slate-700 rounded-lg transition-all"
+                    >
+                      {project.labelGithub}
+                    </a>
+                    <a 
+                      href={project.demo} 
+                      target="_blank" 
+                      rel="noreferrer"
+                      className="flex-1 text-center py-2 bg-cyan-500 hover:bg-cyan-600 text-white text-xs sm:text-sm font-medium rounded-lg transition-all shadow-md shadow-cyan-500/10"
+                    >
+                      {project.labelDemo}
+                    </a>
+                  </>
+                ) : (
+                  <a 
+                    href={project.github} 
+                    target="_blank" 
+                    rel="noreferrer"
+                    className="w-full text-center py-2 bg-slate-800 hover:bg-cyan-900/40 text-cyan-400 text-sm font-medium border border-cyan-900/50 hover:border-cyan-400 rounded-lg transition-all"
+                  >
+                    {project.labelButton || project.labelGithub}
+                  </a>
+                )}
+              </div>
             </div>
           </motion.div>
         ))}
