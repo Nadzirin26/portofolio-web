@@ -4,7 +4,7 @@ export const personalInfo = {
   tagline: "Mengkombinasikan Web Development, IoT, dan Machine Learning untuk menciptakan solusi inovatif.",
   contact: {
     email: "email.lu@gmail.com",
-    github: "https://github.com/Nadzirin26", // Link GitHub lu udah masuk sini
+    github: "https://github.com/Nadzirin26",
     linkedin: "https://www.linkedin.com/in/akmal-shaum-nadzirin-6335ba343?utm_source=share_via&utm_content=profile&utm_medium=member_android"
   }
 };
@@ -13,74 +13,213 @@ export const techSkills = [
   "React", "Tailwind CSS", "CodeIgniter 4", "Flutter", "Python", "YOLOv8", "ResNet50"
 ];
 
+
+export const projects = [
+  {
+    id: 1,
+    title: "Platform Fish It (E-Commerce & Komunitas)",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=800&auto=format&fit=crop",
+    description: "Platform e-commerce dan wadah diskusi interaktif yang dirancang khusus bagi komunitas pecinta ikan hias. Saya membangun antarmuka frontend responsif menggunakan React.js dan Tailwind CSS, serta CodeIgniter 4 (PHP) untuk RESTful API backend, lengkap dengan perencanaan kelayakan bisnis SWOT. (Project Kolaboratif / UAS)",
+    tech: ["React.js", "Tailwind CSS", "PHP / CI4", "MySQL"],
+    github: "https://github.com/Nadzirin26",
+    demo: "https://fishit-three.vercel.app/",
+    labelGithub: "Lihat di GitHub",
+    labelDemo: "Kunjungi Website"
+  },
+  {
+    id: 2,
+    title: "Aplikasi Mobile POS: WarungKu",
+    category: "Mobile App Development",
+    image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=800&auto=format&fit=crop",
+    description: "Aplikasi kasir (Point of Sale) berbasis mobile untuk membantu digitalisasi dan pembukuan warung konvensional. Mengintegrasikan Supabase (database cloud) dan PostgreSQL, scanner barcode perangkat, serta sistem pembayaran instan simulasi QR Code untuk meningkatkan efisiensi waktu transaksi sebesar 40%. (Project Kolaboratif / Capstone)",
+    tech: ["Flutter", "Provider", "Supabase", "PostgreSQL"],
+    github: "https://github.com/Nadzirin26/warungku.git",
+    demo: "https://youtu.be/HCL8jV37xwU?si=a-JArhm0oY6i5me8",
+    labelGithub: "Lihat di GitHub",
+    labelDemo: "Tonton Demo Video"
+  },
+  {
+    id: 3,
+    title: "Sistem Informasi Akademik (Admin Dashboard)",
+    category: "Web Development",
+    image: "https://images.unsplash.com/photo-1517694712202-14dd9538aa97?q=80&w=800&auto=format&fit=crop",
+    description: "Dashboard admin manajemen data akademik kampus terintegrasi. Mengimplementasikan autentikasi JWT dan rute terproteksi (Protected Route) menggunakan React Router, serta optimasi caching data menggunakan React Query untuk mempercepat responsivitas dan pemrosesan data hingga 30%. (Project Individu)",
+    tech: ["React.js", "React Router", "TanStack Query", "Context API"],
+    github: "https://github.com/Nadzirin26",
+    demo: "https://tugas-akhir-pemsik.vercel.app/",
+    labelGithub: "Lihat di GitHub",
+    labelDemo: "Kunjungi Website"
+  },
+  {
+    id: 4,
+    title: "UI/UX GoTravel: Sistem Tiket Travel",
+    category: "UI/UX Design",
+    image: "https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?q=80&w=800&auto=format&fit=crop",
+    description: "Desain antarmuka (Hi-Fi) aplikasi pemesanan tiket travel berbasis mobile. Merancang arsitektur informasi dan user flow yang sangat detail, mulai dari pencarian rute, alur pemilihan kursi interaktif secara visual, pengisian manifes, hingga penerbitan tiket digital ber-QR Code di Figma. (Project Eksplorasi)",
+    tech: ["Figma", "UI/UX Design", "Wireframing", "Prototyping"],
+    github: "https://www.figma.com/design/TV8WImVbNcfBnTDvqfjNlF/Untitled?node-id=0-1",
+    labelButton: "Lihat Desain Figma"
+  },
+  {
+    id: 5,
+    title: "Kriptografi & Steganografi",
+    category: "Data Security",
+    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
+    description: "Program berbasis Python untuk menyembunyikan pesan rahasia ke dalam piksel gambar (Steganografi LSB). Untuk keamanan berlapis, pesan diacak terlebih dahulu menggunakan algoritma enkripsi hibrida RSA dan DES sebelum disisipkan ke dalam media gambar. (Project Akhir Mata Kuliah)",
+    tech: ["Python", "RSA & DES", "LSB Steganography"],
+    github: "https://colab.research.google.com/drive/1TrBjo8GJzR6Sq2StNsYYd3lr7lNeV2EL",
+    labelButton: "Buka Google Colab"
+  }
+];
+
 export const education = [
   {
     school: "Universitas Dian Nuswantoro (UDINUS)",
     degree: "S1 Teknik Informatika",
     year: "Sekarang",
-    desc: "Fokus pada pengembangan perangkat lunak, Web Development, IoT, dan penelitian Machine Learning."
+    desc: "Fokus pada pengembangan perangkat lunak, Web Development, IoT, dan penelitian berbasis Machine Learning."
   },
   {
     school: "SMA Kesatrian 01 Semarang",
     degree: "Jurusan IPA / MIPA",
     year: "Lulus",
     desc: "Aktif dalam kegiatan akademik dan membangun fondasi logika matematika serta sains."
-  },
-  {
-    school: "SMP Negeri 10 Semarang",
-    degree: "Sekolah Menengah Pertama",
-    year: "Lulus",
-    desc: "Masa di mana ketertarikan terhadap teknologi mulai berkembang."
-  },
-  {
-    school: "SD Negeri Petompon 01 Semarang",
-    degree: "Sekolah Dasar",
-    year: "Lulus",
-    desc: "Pendidikan dasar dan pembentukan karakter awal."
   }
 ];
 
-export const experience = [
+const baseOrigin = import.meta.env.BASE_URL.replace(/\/$/, "");
+
+export const certifications = [
   {
-    title: "Sertifikasi / Pengalaman 1",
-    organization: "Nama Penyelenggara",
-    year: "2023 - 2024",
-    desc: "Deskripsi singkat mengenai pengalaman atau sertifikasi yang lu dapatkan di sini."
+    title: "Machine Learning with Python",
+    organization: "IBM | Coursera",
+    year: "Apr 2026",
+    desc: "Berhasil lulus dengan nilai akhir 98%. Menguasai pemisahan data, Regresi Polinomial, teknik regularisasi (Ridge, LASSO), dan Cross-Validation.",
+    image: `${baseOrigin}/Machine Learning With python.jpg`
   },
   {
-    title: "Sertifikasi / Pengalaman 2",
-    organization: "Nama Penyelenggara",
-    year: "2023",
-    desc: "Deskripsi singkat mengenai pengalaman atau sertifikasi yang lu dapatkan di sini."
+    title: "Data Analysis with Python",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Mendalami mekanisme analisis data tingkat lanjut, rekayasa fitur data (Feature Engineering), manipulasi data terstruktur, dan pemodelan statistik.",
+    image: `${baseOrigin}/Coursera AZEAA6OBGR3I.jpg`
+  },
+  {
+    title: "Supervised Machine Learning: Classification",
+    organization: "IBM | Coursera",
+    year: "Okt 2025",
+    desc: "Mempelajari algoritma klasifikasi data terarah (Supervised Learning), evaluasi performa model, serta penanganan ketidakseimbangan kelas data.",
+    image: `${baseOrigin}/Coursera Classification.jpg`
+  },
+  {
+    title: "Exploratory Data Analysis for Machine Learning",
+    organization: "IBM | Coursera",
+    year: "Okt 2025",
+    desc: "Fokus pada pembersihan data (Data Cleaning), statistik inferensial, pengujian hipotesis, dan visualisasi distribusi data sebelum melatih model AI.",
+    image: `${baseOrigin}/Coursera EDA_page-0001.jpg`
+  },
+  {
+    title: "Introduction to Artificial Intelligence (AI)",
+    organization: "IBM | Coursera",
+    year: "Okt 2025",
+    desc: "Berhasil lulus dengan nilai sempurna 100%. Memahami konsep dasar, terminologi esensial, domain aplikasi, serta transformasi bisnis lewat AI.",
+    image: `${baseOrigin}/Coursera AI_page-0001.jpg`
+  },
+  {
+    title: "Supervised Machine Learning: Regression",
+    organization: "IBM | Coursera",
+    year: "Okt 2025",
+    desc: "Mempelajari konsep pembelajaran mesin terarah (Supervised Learning) khusus pemodelan regresi (Linear, Multi-variabel, Non-linear) dan evaluasi performa model.",
+    image: `${baseOrigin}/Coursera Regression.jpg`
+  },
+  {
+    title: "Generative AI: Prompt Engineering Basics",
+    organization: "IBM | Coursera",
+    year: "Apr 2026",
+    desc: "Menguasai teknik rekayasa prompt (Prompt Engineering) tingkat dasar untuk mengarahkan respon model AI Generatif agar menghasilkan output yang relevan dan akurat.",
+    image: `${baseOrigin}/Coursera JTF5TOQV0UKP.jpg`
+  },
+  {
+    title: "Generative AI: Introduction and Applications",
+    organization: "IBM | Coursera",
+    year: "Apr 2026",
+    desc: "Memahami dasar-dasar kecerdasan buatan generatif, konsep Large Language Models (LLM), serta berbagai skenario aplikasi praktis di industri modern.",
+    image: `${baseOrigin}/Coursera Z7YEQCMT0OIP.jpg`
+  },
+  {
+    title: "Introduction to Cybersecurity Careers",
+    organization: "IBM | Coursera",
+    year: "Apr 2026",
+    desc: "Memahami lanskap karir di bidang keamanan siber (Cybersecurity), konsep dasar keamanan informasi, ancaman digital, serta praktik kepatuhan keamanan data.",
+    image: `${baseOrigin}/Coursera Z1EFFT89216X.jpg`
+  },
+  {
+    title: "Python for Data Science, AI & Development",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Memperdalam pemrograman Python dasar hingga tingkat lanjut, struktur data, manipulasi file, serta pemrograman berorientasi objek (OOP) untuk Data Science dan AI.",
+    image: `${baseOrigin}/Coursera NAGPN2JNTLRG.jpg`
+  },
+  {
+    title: "Building Generative AI-Powered Applications with Python",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Mengembangkan aplikasi cerdas berbasis AI Generatif menggunakan Python, memanfaatkan API model bahasa besar untuk integrasi fitur generatif yang interaktif.",
+    image: `${baseOrigin}/Coursera MQD7V7M2F7CS.jpg`
+  },
+  {
+    title: "Developing AI Applications with Python and Flask",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Membangun dan men-deploy aplikasi web berbasis kecerdasan buatan menggunakan bahasa Python dan mikro-framework Flask secara end-to-end.",
+    image: `${baseOrigin}/Coursera JPCTVUW4MDPS.jpg`
+  },
+  {
+    title: "Generative AI and LLMs: Architecture and Data Preparation",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Mempelajari arsitektur model bahasa besar (LLM), pemrosesan awal data teks (text preprocessing), tokenisasi, serta teknik persiapan data untuk pelatihan model AI Generatif.",
+    image: `${baseOrigin}/Coursera GVD7LWP8G9MD.jpg`
+  },
+  {
+    title: "Generative AI Language Modeling with Transformers",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Memahami arsitektur Transformer (Self-Attention, Encoder-Decoder) dan mekanisme pemodelan bahasa alami (NLP) untuk pembuatan konten generatif.",
+    image: `${baseOrigin}/Coursera I9F9E687MGXX.jpg`
+  },
+  {
+    title: "Gen AI Foundational Models for NLP & Language Understanding",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Mengeksplorasi model-model dasar AI Generatif untuk pemahaman bahasa alami (NLP), ekstraksi informasi, dan pemrosesan teks tingkat lanjut.",
+    image: `${baseOrigin}/Coursera S8OBLCB1KGOZ.jpg`
+  },
+  {
+    title: "Generative AI Engineering and Fine-Tuning Transformers",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Menguasai rekayasa AI Generatif dan tuning halus model Transformer untuk menyesuaikan perilaku model dengan tugas-tugas NLP spesifik.",
+    image: `${baseOrigin}/Coursera VEYBJG9R40J9.jpg`
+  },
+  {
+    title: "Generative AI Advanced Fine-Tuning for LLMs",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Mempelajari teknik tuning halus tingkat lanjut (Advanced Fine-Tuning) untuk menyesuaikan Model Bahasa Besar (LLM) dengan domain data spesifik secara efisien.",
+    image: `${baseOrigin}/Coursera JOZ3AHVCLY0V.jpg`
+  },
+  {
+    title: "Fundamentals of AI Agents Using RAG and LangChain",
+    organization: "IBM | Coursera",
+    year: "Mei 2026",
+    desc: "Menguasai dasar-dasar pengembangan agen AI menggunakan teknik Retrieval-Augmented Generation (RAG) dan framework LangChain untuk meningkatkan akurasi respon LLM.",
+    image: `${baseOrigin}/Coursera HD2VE7E1NQVD.jpg`
   }
 ];
 
-export const projects = [
-  {
-    id: 1,
-    title: "Project Fish It",
-    category: "Web App & Business",
-    description: "Prototipe bisnis dan aplikasi web interaktif untuk komunitas penggemar ikan hias.",
-    tech: ["React", "Tailwind CSS", "PHP / CI4"],
-    image: "https://images.unsplash.com/photo-1522069169874-c58ec4b76be5?q=80&w=600&auto=format&fit=crop", // Pakai Unsplash biar nggak broken
-    github: "https://github.com/Nadzirin26/nama-repo-fish-it" // Nanti ganti dengan link repo aslinya
-  },
-  {
-    id: 2,
-    title: "IoT Land Subsidence Monitoring",
-    category: "Internet of Things",
-    description: "Sistem monitoring pergerakan tanah vertikal berbasis IoT untuk mitigasi risiko di kawasan pesisir Semarang.",
-    tech: ["Hardware IoT", "Sensors", "Data Logging"],
-    image: "https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=600&auto=format&fit=crop",
-    github: "https://github.com/Nadzirin26/nama-repo-iot" 
-  },
-  {
-    id: 3,
-    title: "Klasifikasi Kerusakan Infrastruktur",
-    category: "Machine Learning",
-    description: "Komparasi arsitektur Deep Learning (ResNet50 vs EfficientNet-B0) untuk mengklasifikasi kerusakan bangunan pasca bencana.",
-    tech: ["Python", "Deep Learning", "Computer Vision"],
-    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=600&auto=format&fit=crop",
-    github: "https://github.com/Nadzirin26/nama-repo-ml" 
-  }
+export const aboutParagraphs = [
+  "Halo! Saya Akmal, mahasiswa S1 Teknik Informatika di Universitas Dian Nuswantoro (UDINUS), Semarang. Saya sangat menikmati proses kreatif di balik layar, terutama yang berkaitan dengan Web dan Mobile Development. Bagi saya, ngoding itu bukan sekadar menulis sintaks, tapi tentang bagaimana menciptakan solusi digital yang praktis dan beneran ngebantu masalah orang lain.",
+  "Selain asyik ngebangun aplikasi, saya juga lumayan sering ngulik hal-hal berbau keamanan data dan kriptografi. Nah, biar hidup nggak melulu dihabiskan menatap layar monitor, saya rutin meluangkan waktu buat aktif di UKM Bulutangkis. Intinya, harus ada keseimbangan antara ngasah logika dan jaga fisik!"
 ];

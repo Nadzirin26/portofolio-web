@@ -1,36 +1,20 @@
-import React from 'react';
 import { personalInfo } from '../data';
-import { FaGithub, FaLinkedin, FaEnvelope } from 'react-icons/fa';
 
-const Footer = () => {
+export default function Footer() {
   return (
-    <footer className="border-t border-slate-800 bg-slate-900 mt-10">
-      <div className="max-w-7xl mx-auto px-6 sm:px-12 lg:px-24 py-12 flex flex-col md:flex-row justify-between items-center gap-6">
-        
-        <div className="text-center md:text-left">
-          <h3 className="text-2xl font-bold text-white mb-2">Mari Berkolaborasi!</h3>
-          <p className="text-slate-400 text-sm">Terbuka untuk diskusi project, riset, atau peluang kerja.</p>
-        </div>
-        
-        <div className="flex space-x-6">
-          <a href={personalInfo.contact.github} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-cyan-400 text-3xl transition-transform hover:scale-110">
-            <FaGithub />
-          </a>
-          <a href={personalInfo.contact.linkedin} target="_blank" rel="noreferrer" className="text-slate-400 hover:text-cyan-400 text-3xl transition-transform hover:scale-110">
-            <FaLinkedin />
-          </a>
-          <a href={`mailto:${personalInfo.contact.email}`} className="text-slate-400 hover:text-cyan-400 text-3xl transition-transform hover:scale-110">
-            <FaEnvelope />
-          </a>
-        </div>
-
+    <footer id="contact" className="section contact-section" aria-labelledby="contact-title">
+      <p className="eyebrow">04 / Contact</p>
+      <h2 id="contact-title">Mari Berkolaborasi!</h2>
+      <p className="contact-description">Terbuka untuk diskusi project, riset, atau peluang kerja.</p>
+      <div className="action-row contact-actions">
+        <a className="button button-primary" href={`mailto:${personalInfo.contact.email}`}>Email <span aria-hidden="true">↗</span></a>
+        <a className="button" href={personalInfo.contact.github} target="_blank" rel="noopener noreferrer">GitHub <span aria-hidden="true">↗</span></a>
+        <a className="button" href={personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer">LinkedIn <span aria-hidden="true">↗</span></a>
       </div>
-      
-      <div className="py-6 text-center text-slate-600 text-xs border-t border-slate-800/50 bg-slate-950">
-        © {new Date().getFullYear()} {personalInfo.name}. Built with React & Tailwind CSS.
+      <div className="footer-bottom">
+        <p>© {new Date().getFullYear()} {personalInfo.name}. Built with React &amp; Tailwind CSS.</p>
+        <a href="#home">Kembali ke atas <span aria-hidden="true">↑</span></a>
       </div>
     </footer>
   );
-};
-
-export default Footer;
+}

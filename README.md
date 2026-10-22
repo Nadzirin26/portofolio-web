@@ -1,16 +1,34 @@
-# React + Vite
+# Akmal Shaum Nadzirin — Portfolio
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Portofolio responsif berbasis React, Vite, dan Tailwind CSS, mengikuti desain Figma dengan warna charcoal–sage. Satu website melayani desktop, tablet, dan HP.
 
-Currently, two official plugins are available:
+## Menjalankan lokal
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+```sh
+npm install
+npm run dev
+```
 
-## React Compiler
+## Pemeriksaan dan produksi
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+```sh
+npm run lint
+npm run build
+npm run preview
+```
 
-## Expanding the ESLint configuration
+## Struktur
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+- `src/data/index.js`: profil, skill, 5 proyek, 2 pendidikan, dan 18 sertifikat.
+- `src/sections/`: Home, Projects, About, dan Journey.
+- `src/components/`: navigasi responsif dan kontak.
+- `src/index.css`: sistem visual, breakpoint, dan dialog sertifikat.
+- `public/`: CV dan gambar sertifikat asli.
+
+Foto menggunakan file asli 1200 × 1600, rasio tetap 3:4, dan `object-fit: contain`. Dialog sertifikat mendukung keyboard, Escape, pembatasan fokus bawaan browser, serta pengembalian fokus ke tombol pembuka.
+
+## Deployment
+
+Build command: `npm run build`. Output directory: `dist`. Deploy dari akar repository, bukan subfolder `portfolio-akmal/` yang merupakan salinan lama. Website: https://portofolio-web-azure-phi.vercel.app/.
+
+Konten dan tautan mengikuti portofolio sebelumnya. Email masih placeholder `email.lu@gmail.com`; dua tautan proyek GitHub masih menuju profil pengguna sesuai data sumber.
