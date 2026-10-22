@@ -349,3 +349,13 @@ h2 { color: var(--paper); font-size: clamp(38px, 4.2vw, 60px); font-weight: 400;
 }
 .project-preview-6 > a { background: #0c1928; }
 @media (max-width: 639px) { .contact-actions .button:last-child { grid-column: 1 / -1; } }
+
+/* Keep the mobile reading and keyboard order: introduction, portrait, actions. */
+.hero { grid-template-areas: 'copy portrait' 'actions portrait'; row-gap: 32px; }
+.hero-copy { grid-area: copy; }
+.hero-portrait { grid-area: portrait; }
+.hero .hero-actions { grid-area: actions; margin-top: 0; align-self: start; justify-content: flex-start; }
+@media (max-width: 639px) {
+  .hero { grid-template-areas: 'copy' 'portrait' 'actions'; row-gap: 32px; }
+  .hero .hero-actions { margin-top: 0; width: 100%; }
+}
