@@ -359,3 +359,11 @@ h2 { color: var(--paper); font-size: clamp(38px, 4.2vw, 60px); font-weight: 400;
   .hero { grid-template-areas: 'copy' 'portrait' 'actions'; row-gap: 32px; }
   .hero .hero-actions { margin-top: 0; width: 100%; }
 }
+
+/* On phones the portrait sits directly between the name and academic role. */
+.hero { grid-template-areas: 'copy portrait' 'details portrait' 'actions portrait'; row-gap: 24px; }
+.hero-details { grid-area: details; min-width: 0; }
+.hero-details .hero-role { margin-top: 0; }
+@media (max-width: 639px) {
+  .hero { grid-template-areas: 'copy' 'portrait' 'details' 'actions'; row-gap: 32px; }
+}

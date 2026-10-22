@@ -106,6 +106,21 @@ const baseOrigin = import.meta.env.BASE_URL.replace(/\/$/, "");
 
 export const certifications = [
   {
+    title: "Panitia Dinus Badminton Cup VIII — DINUSFEST 2026",
+    organization: "Universitas Dian Nuswantoro",
+    year: "Jan–Feb 2026",
+    desc: "Menjadi panitia Dinus Badminton Cup VIII dalam rangka DINUSFEST 2026, acara antar SMA/SMK tingkat nasional yang diselenggarakan Universitas Dian Nuswantoro pada 18 Januari–14 Februari 2026.",
+    image: `${baseOrigin}/sertifikat-acara-nasional.png`,
+    pdf: `${baseOrigin}/sertifikat-dinus-badminton-cup-viii.pdf`
+  },
+  {
+    title: "Koordinator Kepelatihan UKM Bulutangkis",
+    organization: "UKM Bulutangkis — Universitas Dian Nuswantoro",
+    year: "2025/2026",
+    desc: "Menjabat sebagai koordinator kepelatihan UKM Bulutangkis Universitas Dian Nuswantoro periode 2025/2026. Mendapatkan sertifikat penghargaan bidang Kepelatihan yang diterbitkan pada 17 September 2026.",
+    image: `${baseOrigin}/sertifikat-kepelatihan-ukm.png`
+  },
+  {
     title: "Machine Learning with Python",
     organization: "IBM | Coursera",
     year: "Apr 2026",

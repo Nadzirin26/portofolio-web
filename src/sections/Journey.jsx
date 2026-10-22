@@ -39,7 +39,7 @@ export default function Journey() {
       </div>
       <Reveal as="header" className="certification-heading">
         <h3>Pengalaman &amp; Sertifikasi</h3>
-        <p>IBM | Coursera · {certifications.length} sertifikat</p>
+        <p>UDINUS · UKM Bulutangkis · IBM | Coursera · {certifications.length} sertifikat</p>
       </Reveal>
       <div className="certificate-grid">
         {certifications.map((certificate, index) => (
@@ -65,7 +65,7 @@ export default function Journey() {
               <button className="dialog-close" type="button" autoFocus onClick={() => setSelectedCertificate(null)} aria-label="Tutup sertifikat">×</button>
             </header>
             {imageError ? <p className="image-error">Gambar belum berhasil dimuat. Kamu dapat membukanya melalui tautan di bawah.</p> : <img src={selectedCertificate.image} alt={`Sertifikat ${selectedCertificate.title} milik Akmal Shaum Nadzirin`} onError={() => setImageError(true)} />}
-            <a className="certificate-original" href={selectedCertificate.image} target="_blank" rel="noopener noreferrer">Buka gambar asli <span aria-hidden="true">↗</span></a>
+            <a className="certificate-original" href={selectedCertificate.pdf || selectedCertificate.image} target="_blank" rel="noopener noreferrer">{selectedCertificate.pdf ? 'Buka PDF asli' : 'Buka gambar asli'} <span aria-hidden="true">↗</span></a>
           </div>
         )}
       </dialog>
