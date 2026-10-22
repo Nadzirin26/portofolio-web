@@ -256,3 +256,94 @@ h2 { color: var(--paper); font-size: clamp(38px, 4.2vw, 60px); font-weight: 400;
 }
 .project-demo-note { margin-top: 16px; color: #a1aaa6; font-size: 13px; line-height: 1.65; max-width: 580px; }
 .project-preview-5 > a { background: #f5f8fc; }
+.project-preview-1 > a { background: #f1f5f9; }
+
+/* Warm editorial palette, with quiet surfaces separating the reading sections. */
+:root { background: #202523; color: #c0c7c0; --paper: #f3f0e7; --sage: #c4d2b0; --line: #414a42; --surface: #303a33; --copper: #dbab88; }
+.site-header { background: #202523f5; }
+.wordmark { display: inline-flex; align-items: center; gap: 10px; }
+.wordmark::before { content: ''; width: 9px; height: 9px; background: var(--copper); border-radius: 50%; }
+.hero { position: relative; padding-bottom: 88px; }
+.hero-welcome { display: flex; align-items: center; gap: 12px; }
+.hero-welcome::before { content: ''; width: 30px; height: 1px; background: var(--copper); flex-shrink: 0; }
+.hero h1 > span:last-child { color: var(--copper); font-family: Georgia, 'Times New Roman', serif; font-style: italic; font-weight: 400; letter-spacing: -.045em; }
+.hero-focus { display: flex; flex-wrap: wrap; gap: 8px 18px; margin-top: 24px; color: #d5dacd; font-size: 12px; line-height: 1.8; }
+.hero-focus li { display: flex; align-items: center; gap: 8px; }
+.hero-focus li::before { content: ''; width: 4px; height: 4px; background: var(--copper); border-radius: 50%; }
+.hero-portrait { position: relative; padding: 14px 14px 0; border: 1px solid #66705d; background: #30382e; border-radius: 8px; }
+.hero-portrait img { border-radius: 3px; }
+.hero-portrait figcaption { padding-bottom: 15px; color: #d0d6c5; font-size: 12px; }
+.hero-portrait::after { content: ''; position: absolute; width: 42px; height: 4px; top: -2px; right: 22px; background: var(--copper); }
+.section-heading { display: flex; align-items: flex-start; flex-direction: column; }
+.section-heading::after { content: ''; display: block; width: 62px; height: 3px; margin-top: 26px; background: var(--copper); }
+.project-list { margin-top: 46px; display: grid; gap: 24px; }
+.project, .project:first-child, .project:last-child { padding: 32px; border: 1px solid var(--line); border-radius: 10px; background: #272f29; gap: 40px; }
+.project:nth-child(even) { background: #252b28; }
+.project-number { display: inline-flex; align-items: center; justify-content: center; width: 42px; height: 42px; margin-bottom: 22px; border: 1px solid #69745f; border-radius: 50%; font-size: 16px; color: var(--sage); font-variant-numeric: tabular-nums; }
+.project-copy > .eyebrow { display: inline-block; padding: 5px 10px; border-radius: 4px; color: #d7c5b3; background: #d8aa8812; border: 1px solid #d8aa882e; font-size: 10px; }
+.project h3 { margin-top: 18px; font-size: 30px; }
+.project-description { font-size: 17px; }
+.project-technologies { gap: 7px; font-size: 12px; }
+.project-technologies li { padding: 4px 9px; border: 1px solid #4d594b; border-radius: 4px; }
+.project-technologies li:not(:last-child)::after { content: none; }
+.button { border-radius: 5px; }
+.about-section { margin-block: 32px; padding: 56px; background: #e9e6da; border-radius: 10px; border: 0; color: #434b40; }
+.about-section .eyebrow { color: #4e6248; }
+.about-layout { gap: 38px; grid-template-columns: minmax(0,.8fr) minmax(0,1fr); }
+.about-layout h2 { color: #29382c; }
+.about-copy { font-size: 17px; }
+.skills { border-top: 1px solid #b7bfac; padding-top: 28px; margin-top: 38px; }
+.skills ul { gap: 10px; font-size: 15px; color: #30432f; line-height: 1.5; }
+.skills li { padding: 9px 14px; background: #d8ddce; border: 1px solid #bec8b3; border-radius: 5px; }
+.skills li:not(:last-child)::after { content: none; }
+.education-list { border-left: 1px solid #6a795f; margin-left: 8px; padding-left: 32px; }
+.education-item { position: relative; }
+.education-item::before { content: ''; position: absolute; left: -39px; top: 12px; width: 13px; height: 13px; border: 3px solid #202523; border-radius: 50%; background: var(--copper); }
+.education-meta { color: var(--copper); }
+.certificate-grid { gap: 20px; }
+.certificate { padding: 26px; border: 1px solid var(--line); border-radius: 8px; background: #272e29; }
+.certificate .eyebrow { color: var(--copper); }
+.certificate h4 { font-size: 22px; }
+.certificate .button { background: #354033; border-color: #51614b; }
+.contact-section { margin-top: 32px; padding: 52px 48px 28px; border-radius: 10px 10px 0 0; background: #c4d2b0; color: #354530; }
+.contact-section h2 { color: #253725; }
+.contact-section .eyebrow { color: #4b6040; }
+.contact-section .button { color: #f3f0e7; background: #30442e; border-color: #30442e; }
+.contact-section .button:hover { background: #41583a; }
+.contact-section .button-primary { background: #253725; }
+.contact-section .footer-bottom { border-color: #8b9e79; margin-top: 56px; }
+.contact-section .footer-bottom a:hover { color: #fff; }
+@media (max-width: 1199px) {
+  .project, .project:first-child, .project:last-child { padding: 26px; gap: 30px; }
+  .project h3 { font-size: 27px; }
+  .about-section { padding: 40px; }
+}
+@media (max-width: 899px) {
+  .project, .project:first-child, .project:last-child { padding: 24px; gap: 26px; grid-template-columns: 190px minmax(0,1fr); }
+  .project h3 { font-size: 25px; }
+  .project-description { font-size: 16px; }
+  .about-layout { grid-template-columns: 1fr; }
+  .contact-section { padding-inline: 32px; }
+}
+@media (max-width: 639px) {
+  .hero { padding-bottom: 56px; }
+  .hero-portrait { padding: 12px 12px 0; }
+  .hero-portrait figcaption { padding-bottom: 12px; }
+  .hero-focus { gap: 7px 13px; font-size: 11px; }
+  .project, .project:first-child, .project:last-child { grid-template-columns: 1fr; padding: 20px; gap: 25px; }
+  .project h3 { font-size: 24px; }
+  .project .action-row { flex-direction: column; }
+  .project-technologies { font-size: 11px; }
+  .project-technologies li { padding: 4px 7px; }
+  .about-section { padding: 30px 22px; }
+  .about-layout h2 { font-size: 31px; }
+  .about-copy { font-size: 16px; }
+  .skills ul { font-size: 13px; gap: 8px; }
+  .skills li { padding: 8px 10px; }
+  .education-list { padding-left: 24px; }
+  .education-item::before { left: -31px; }
+  .certificate { padding: 22px; }
+  .contact-section { padding: 34px 22px 24px; }
+  .contact-section h2 { font-size: 30px; }
+  .navigation-links { background: #202523; }
+}
