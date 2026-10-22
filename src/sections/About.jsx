@@ -4,7 +4,7 @@ import { aboutParagraphs, techSkills } from '../data';
 export default function About() {
   return (
     <Reveal as="section" id="about" className="section about-section" aria-labelledby="about-title">
-      <p className="eyebrow">02 / About Me</p>
+      <p className="eyebrow">01 / About Me</p>
       <div className="about-layout">
         <h2 id="about-title">Mahasiswa &amp;<br />Tech Enthusiast</h2>
         <div className="about-copy">{aboutParagraphs.map(paragraph => <p key={paragraph}>{paragraph}</p>)}</div>

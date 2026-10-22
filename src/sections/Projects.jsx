@@ -8,13 +8,14 @@ const visuals = [
   ['academic-login.png', 'Halaman masuk aplikasi akademik', 'Halaman masuk / Aplikasi akademik'],
   ['gotravel.png', 'Desain homepage GoTravel di Figma', 'Desain asli Figma / GoTravel'],
   ['penilaian-pembelajaran.png', 'Halaman demo Aplikasi Penilaian Rencana Pembelajaran', 'Demo interaktif / Penilaian pembelajaran'],
+  ['kartu-ulang-tahun.png', 'Tampilan kartu ucapan ulang tahun interaktif dengan lima halaman ucapan', 'Demo interaktif / Kartu ulang tahun'],
 ];
 
 export default function Projects() {
   return (
     <section id="projects" className="section projects-section" aria-labelledby="projects-title">
       <Reveal as="header" className="section-heading">
-        <p className="eyebrow">01 / Featured Projects</p>
+        <p className="eyebrow">02 / Featured Projects</p>
         <h2 id="projects-title">Selected work.</h2>
       </Reveal>
       <div className="project-list">

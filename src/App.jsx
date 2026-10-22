@@ -12,8 +12,8 @@ export default function App() {
       <Navbar />
       <main id="main" className="page-shell">
         <Hero />
-        <Projects />
         <About />
+        <Projects />
         <Journey />
         <Footer />
       </main>

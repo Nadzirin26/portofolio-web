@@ -71,6 +71,16 @@ export const projects = [
     demo: `${import.meta.env.BASE_URL}demos/penilaian-rencana-pembelajaran/index.html`,
     labelDemo: "Coba Demo Interaktif",
     demoNote: "Demo ringkas: 5 indikator. Data hanya tersimpan selama halaman terbuka; PDF melalui Cetak / Simpan PDF pada browser."
+  },
+  {
+    id: 6,
+    title: "Kartu Ucapan Ulang Tahun Interaktif",
+    category: "Web Development",
+    description: "Website kartu ucapan digital dengan lima halaman ucapan, animasi transisi, dan efek confetti. Tampilannya responsif untuk HP maupun desktop, dengan navigasi melalui tombol, keyboard, atau geser layar.",
+    tech: ["HTML5", "CSS3", "JavaScript (Vanilla JS)"],
+    demo: `${import.meta.env.BASE_URL}demos/kartu-ulang-tahun/index.html`,
+    labelDemo: "Buka Kartu Ucapan",
+    demoNote: "Tanpa framework atau library tambahan. Seluruh kode dikemas dalam satu file HTML."
   }
 ];
 
