@@ -1,3 +1,4 @@
+import Reveal from '../components/Reveal';
 import { useEffect, useRef, useState } from 'react';
 import { certifications, education } from '../data';
 
@@ -26,23 +27,23 @@ export default function Journey() {
   return (
     <section id="education" className="section journey-section" aria-labelledby="journey-title">
       <p className="eyebrow">03 / My Journey</p>
-      <h2 id="journey-title">Riwayat Pendidikan</h2>
+      <Reveal as="h2" id="journey-title">Riwayat Pendidikan</Reveal>
       <div className="education-list">
         {education.map(item => (
-          <article className="education-item" key={item.school}>
+          <Reveal as="article" className="education-item" key={item.school}>
             <h3>{item.school}</h3>
             <p className="education-meta">{item.degree} / {item.year}</p>
             <p>{item.desc}</p>
-          </article>
+          </Reveal>
         ))}
       </div>
-      <header className="certification-heading">
+      <Reveal as="header" className="certification-heading">
         <h3>Pengalaman &amp; Sertifikasi</h3>
         <p>IBM | Coursera · {certifications.length} sertifikat</p>
-      </header>
+      </Reveal>
       <div className="certificate-grid">
         {certifications.map((certificate, index) => (
-          <article className="certificate" key={certificate.title}>
+          <Reveal as="article" className="certificate" key={certificate.title}>
             <p className="eyebrow">{String(index + 1).padStart(2, '0')} / {certificate.year}</p>
             <h4>{certificate.title}</h4>
             <p className="certificate-organization">{certificate.organization}</p>
@@ -50,7 +51,7 @@ export default function Journey() {
             <button type="button" className="button" aria-haspopup="dialog" aria-label={`Lihat Sertifikat: ${certificate.title}`} onClick={() => showCertificate(certificate)}>
               Lihat Sertifikat {String(index + 1).padStart(2, '0')} <span aria-hidden="true">↗</span>
             </button>
-          </article>
+          </Reveal>
         ))}
       </div>
       <dialog ref={dialogRef} className="certificate-dialog" aria-labelledby="certificate-dialog-title" onCancel={() => setSelectedCertificate(null)} onClick={event => { if (event.target === event.currentTarget) setSelectedCertificate(null); }}>

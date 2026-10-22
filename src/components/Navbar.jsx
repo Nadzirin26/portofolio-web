@@ -1,4 +1,4 @@
-import { useRef, useState } from 'react';
+import { useEffect, useRef, useState } from 'react';
 
 const links = [
   ['Home', '#home'], ['Projects', '#projects'], ['About', '#about'],
@@ -8,6 +8,30 @@ const links = [
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
   const toggleRef = useRef(null);
+  const [activeSection, setActiveSection] = useState('home');
+
+  useEffect(() => {
+    let frame;
+    const update = () => {
+      cancelAnimationFrame(frame);
+      frame = requestAnimationFrame(() => {
+        let current = 'home';
+        for (const [, href] of links) {
+          if (document.querySelector(href)?.getBoundingClientRect().top <= window.innerHeight * 0.35) current = href.slice(1);
+        }
+        if (window.innerHeight + window.scrollY >= document.documentElement.scrollHeight - 8) current = 'contact';
+        setActiveSection(current);
+      });
+    };
+    window.addEventListener('scroll', update, { passive: true });
+    window.addEventListener('resize', update);
+    update();
+    return () => {
+      cancelAnimationFrame(frame);
+      window.removeEventListener('scroll', update);
+      window.removeEventListener('resize', update);
+    };
+  }, []);
 
   function closeOnEscape(event) {
     if (event.key === 'Escape' && isOpen) {
@@ -26,7 +50,7 @@ export default function Navbar() {
         </button>
         <ul id="navigation-links" className={`navigation-links${isOpen ? ' is-open' : ''}`}>
           {links.map(([label, href]) => (
-            <li key={href}><a href={href} onClick={() => setIsOpen(false)}>{label}</a></li>
+            <li key={href}><a href={href} aria-current={activeSection === href.slice(1) ? 'location' : undefined} onClick={() => setIsOpen(false)}>{label}</a></li>
           ))}
         </ul>
       </nav>
