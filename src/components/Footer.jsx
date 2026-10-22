@@ -1,5 +1,5 @@
 import Reveal from './Reveal';
-import { FiMail, FiGithub, FiLinkedin, FiArrowUp } from 'react-icons/fi';
+import { FiMail, FiGithub, FiLinkedin, FiInstagram, FiArrowUp } from 'react-icons/fi';
 import { personalInfo } from '../data';
 
 export default function Footer() {
@@ -12,6 +12,7 @@ export default function Footer() {
         <a className="button button-primary" href={`mailto:${personalInfo.contact.email}`}><FiMail aria-hidden="true" /> Email</a>
         <a className="button" href={personalInfo.contact.github} target="_blank" rel="noopener noreferrer"><FiGithub aria-hidden="true" /> GitHub</a>
         <a className="button" href={personalInfo.contact.linkedin} target="_blank" rel="noopener noreferrer"><FiLinkedin aria-hidden="true" /> LinkedIn</a>
+        <a className="button" href={personalInfo.contact.instagram} target="_blank" rel="noopener noreferrer"><FiInstagram aria-hidden="true" /> Instagram</a>
       </div>
       <div className="footer-bottom">
         <p>© {new Date().getFullYear()} {personalInfo.name}. Built with React &amp; Tailwind CSS.</p>

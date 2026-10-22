@@ -348,3 +348,4 @@ h2 { color: var(--paper); font-size: clamp(38px, 4.2vw, 60px); font-weight: 400;
   .navigation-links { background: #202523; }
 }
 .project-preview-6 > a { background: #0c1928; }
+@media (max-width: 639px) { .contact-actions .button:last-child { grid-column: 1 / -1; } }

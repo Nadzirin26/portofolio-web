@@ -10,8 +10,8 @@ export default function Hero() {
         <p className="hero-welcome">Halo, selamat datang di portofolio saya.</p>
         <h1 id="hero-title"><span className="hero-introduction">Hi, I&apos;m</span><span>Akmal Shaum</span><span>Nadzirin.</span></h1>
         <p className="hero-role">{personalInfo.role}</p>
-        <p className="hero-description">Fokus mendalami pengembangan aplikasi Web &amp; Mobile, serta antusias mengeksplorasi keamanan data digital untuk menciptakan solusi yang inovatif.</p>
-        <ul className="hero-focus" aria-label="Bidang minat"><li>Web &amp; Mobile</li><li>UI/UX</li><li>Keamanan Data</li></ul>
+        <p className="hero-description">Fokus mendalami pengembangan aplikasi Web &amp; Mobile, serta antusias mengeksplorasi Machine Learning untuk menciptakan solusi yang inovatif.</p>
+        <ul className="hero-focus" aria-label="Bidang minat"><li>Web &amp; Mobile</li><li>UI/UX</li><li>Machine Learning</li></ul>
         <div className="action-row">
           <a className="button button-primary" href="#projects">Lihat Project <FiArrowRight aria-hidden="true" /></a>
           <a className="button" href={`${import.meta.env.BASE_URL}CV_Akmal_Shaum.pdf`} download="CV_Akmal_Shaum_Nadzirin.pdf">Download CV <FiDownload aria-hidden="true" /></a>

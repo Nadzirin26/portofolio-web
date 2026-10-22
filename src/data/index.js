@@ -5,6 +5,7 @@ export const personalInfo = {
   contact: {
     email: "email.lu@gmail.com",
     github: "https://github.com/Nadzirin26",
+    instagram: "https://www.instagram.com/akmalshaum_/",
     linkedin: "https://www.linkedin.com/in/akmal-shaum-nadzirin-6335ba343?utm_source=share_via&utm_content=profile&utm_medium=member_android"
   }
 };
@@ -23,6 +24,7 @@ export const projects = [
     description: "Platform e-commerce dan wadah diskusi interaktif yang dirancang khusus bagi komunitas pecinta ikan hias. Saya membangun antarmuka frontend responsif menggunakan React.js dan Tailwind CSS, serta CodeIgniter 4 (PHP) untuk RESTful API backend, lengkap dengan perencanaan kelayakan bisnis SWOT. (Project Kolaboratif / UAS)",
     tech: ["React.js", "Tailwind CSS", "PHP / CI4", "MySQL"],
     github: "https://github.com/Nadzirin26",
+    instagram: "https://www.instagram.com/akmalshaum_/",
     demo: "https://fishit-three.vercel.app/",
     labelGithub: "Lihat di GitHub",
     labelDemo: "Kunjungi Website"
@@ -47,6 +49,7 @@ export const projects = [
     description: "Dashboard admin manajemen data akademik kampus terintegrasi. Mengimplementasikan autentikasi JWT dan rute terproteksi (Protected Route) menggunakan React Router, serta optimasi caching data menggunakan React Query untuk mempercepat responsivitas dan pemrosesan data hingga 30%. (Project Individu)",
     tech: ["React.js", "React Router", "TanStack Query", "Context API"],
     github: "https://github.com/Nadzirin26",
+    instagram: "https://www.instagram.com/akmalshaum_/",
     demo: "https://tugas-akhir-pemsik.vercel.app/",
     labelGithub: "Lihat di GitHub",
     labelDemo: "Kunjungi Website"
