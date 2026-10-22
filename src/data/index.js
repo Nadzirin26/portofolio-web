@@ -63,13 +63,14 @@ export const projects = [
   },
   {
     id: 5,
-    title: "Kriptografi & Steganografi",
-    category: "Data Security",
-    image: "https://images.unsplash.com/photo-1526374965328-7f61d4dc18c5?q=80&w=800&auto=format&fit=crop",
-    description: "Program berbasis Python untuk menyembunyikan pesan rahasia ke dalam piksel gambar (Steganografi LSB). Untuk keamanan berlapis, pesan diacak terlebih dahulu menggunakan algoritma enkripsi hibrida RSA dan DES sebelum disisipkan ke dalam media gambar. (Project Akhir Mata Kuliah)",
-    tech: ["Python", "RSA & DES", "LSB Steganography"],
-    github: "https://colab.research.google.com/drive/1TrBjo8GJzR6Sq2StNsYYd3lr7lNeV2EL",
-    labelButton: "Buka Google Colab"
+    title: "Aplikasi Penilaian Rencana Pembelajaran",
+    category: "Web Development",
+    image: "projects/penilaian-pembelajaran.png",
+    description: "Mengembangkan aplikasi web penilaian rencana pembelajaran dengan rubrik terstruktur, perhitungan nilai otomatis, catatan evaluasi, dan laporan PDF. Project asli dibangun menggunakan PHP, Bootstrap, JavaScript, dan mPDF, dengan demo interaktif berbasis HTML, CSS, dan JavaScript.",
+    tech: ["PHP", "Bootstrap", "JavaScript", "mPDF", "HTML", "CSS"],
+    demo: `${import.meta.env.BASE_URL}demos/penilaian-rencana-pembelajaran/index.html`,
+    labelDemo: "Coba Demo Interaktif",
+    demoNote: "Demo ringkas: 5 indikator. Data hanya tersimpan selama halaman terbuka; PDF melalui Cetak / Simpan PDF pada browser."
   }
 ];
 

@@ -254,3 +254,5 @@ h2 { color: var(--paper); font-size: clamp(38px, 4.2vw, 60px); font-weight: 400;
   .site-header, .navigation-links.is-open { animation: none; }
   .button:hover, .button:active, .navigation-links a:hover, .navigation-links a:active, .project-preview > a:hover img { transform: none; }
 }
+.project-demo-note { margin-top: 16px; color: #a1aaa6; font-size: 13px; line-height: 1.65; max-width: 580px; }
+.project-preview-5 > a { background: #f5f8fc; }

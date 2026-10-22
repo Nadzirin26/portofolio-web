@@ -7,7 +7,7 @@ const visuals = [
   ['warungku.png', 'Kode Flutter WarungKu dalam presentasi capstone', 'Cuplikan presentasi / WarungKu'],
   ['academic-login.png', 'Halaman masuk aplikasi akademik', 'Halaman masuk / Aplikasi akademik'],
   ['gotravel.png', 'Desain homepage GoTravel di Figma', 'Desain asli Figma / GoTravel'],
-  ['steganography.png', 'Output notebook enkripsi dan steganografi', 'Output notebook / Keamanan data'],
+  ['penilaian-pembelajaran.png', 'Halaman demo Aplikasi Penilaian Rencana Pembelajaran', 'Demo interaktif / Penilaian pembelajaran'],
 ];
 
 export default function Projects() {
@@ -37,10 +37,11 @@ export default function Projects() {
               <ul className="project-technologies" aria-label="Teknologi proyek">{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul>
               <div className="action-row">
                 {project.demo ? <>
-                  <a className="button" href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelGithub}: ${project.title} (tab baru)`}><FiGithub aria-hidden="true" />{project.labelGithub}</a>
+                  {project.github && <a className="button" href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelGithub}: ${project.title} (tab baru)`}><FiGithub aria-hidden="true" />{project.labelGithub}</a>}
                   <a className="button button-primary" href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelDemo}: ${project.title} (tab baru)`}>{index === 1 ? <FiPlay aria-hidden="true" /> : <FiExternalLink aria-hidden="true" />}{project.labelDemo}</a>
                 </> : <a className="button button-primary" href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelButton}: ${project.title} (tab baru)`}>{index === 3 ? <FiFigma aria-hidden="true" /> : <FiCode aria-hidden="true" />}{project.labelButton}<FiArrowUpRight aria-hidden="true" /></a>}
               </div>
+              {project.demoNote && <p className="project-demo-note">{project.demoNote}</p>}
             </div>
           </Reveal>
         ))}
