@@ -9,6 +9,7 @@ const visuals = [
   ['gotravel.png', 'Desain homepage GoTravel di Figma', 'Desain asli Figma / GoTravel'],
   ['penilaian-pembelajaran.png', 'Halaman demo Aplikasi Penilaian Rencana Pembelajaran', 'Demo interaktif / Penilaian pembelajaran'],
   ['kartu-ulang-tahun.png', 'Tampilan kartu ucapan ulang tahun interaktif dengan lima halaman ucapan', 'Demo interaktif / Kartu ulang tahun'],
+  ['teduh.png', 'Beranda Teduh dengan ilustrasi bukit dan ajakan untuk bercerita', 'Tampilan asli / Teduh'],
 ];
 
 export default function Projects() {
@@ -36,6 +37,7 @@ export default function Projects() {
               <h3 id={`project-${project.id}`}>{project.title}</h3>
               <p className="project-description">{project.description}</p>
               <ul className="project-technologies" aria-label="Teknologi proyek">{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul>
+              {project.implementationNote && <p className="project-implementation-note">{project.implementationNote}</p>}
               <div className="action-row">
                 {project.demo ? <>
                   {project.github && <a className="button" href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelGithub}: ${project.title} (tab baru)`}><FiGithub aria-hidden="true" />{project.labelGithub}</a>}

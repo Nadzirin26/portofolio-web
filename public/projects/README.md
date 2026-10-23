@@ -8,3 +8,4 @@ Captured from the portfolio owner's existing public project links on 2026-10-22.
 - gotravel.png: https://www.figma.com/design/TV8WImVbNcfBnTDvqfjNlF/Untitled (homepage design)
 - penilaian-pembelajaran.png: screenshot of the supplied HTML demo, hosted at /demos/penilaian-rencana-pembelajaran/index.html (2026-10-22).
 - kartu-ulang-tahun.png: screenshot of the supplied interactive birthday card HTML demo, hosted at /demos/kartu-ulang-tahun/index.html (2026-10-22).
+- teduh.png: original homepage screenshot from https://whay-no.vercel.app/ (2026-10-23). AI chatbot is not active at the time of addition.

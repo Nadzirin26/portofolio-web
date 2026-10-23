@@ -84,6 +84,19 @@ export const projects = [
     demo: `${import.meta.env.BASE_URL}demos/kartu-ulang-tahun/index.html`,
     labelDemo: "Buka Kartu Ucapan",
     demoNote: "Tanpa framework atau library tambahan. Seluruh kode dikemas dalam satu file HTML."
+  },
+  {
+    id: 7,
+    title: "Teduh — Teman Cerita Berbasis AI",
+    category: "Web Development & AI",
+    description: "Aplikasi web berbahasa Indonesia untuk bercerita tanpa dihakimi, menemukan kata penyemangat, serta melakukan latihan napas dan grounding. Dilengkapi tiga mode percakapan, chat streaming, deteksi frasa krisis, riwayat lokal, dan mode tanpa simpan. Tampilannya responsif untuk HP, tablet, dan laptop.",
+    tech: ["React", "TypeScript", "Vite", "Tailwind CSS", "Node.js", "Express", "Vercel Functions", "API kompatibel OpenAI", "SSE", "localStorage"],
+    github: "https://github.com/Nadzirin26/whay-no",
+    demo: "https://whay-no.vercel.app/",
+    labelGithub: "Lihat di GitHub",
+    labelDemo: "Kunjungi Website",
+    implementationNote: "Pengujian: Vitest, React Testing Library, ESLint, dan Lighthouse. Deployment: Vercel, Git, dan GitHub. Penyimpanan lokal tanpa database; tersedia mode demo.",
+    demoNote: "Status saat ini: website dapat diakses, tetapi chatbot AI belum aktif. Fitur percakapan AI masih dalam pengembangan."
   }
 ];
 
