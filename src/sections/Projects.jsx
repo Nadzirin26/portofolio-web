@@ -3,7 +3,7 @@ import { FiArrowUpRight, FiGithub, FiExternalLink, FiPlay, FiFigma, FiCode } fro
 import Reveal from '../components/Reveal';
 
 const visuals = [
-  ['fish-it-storefront.png', 'Tampilan terbaru Fish It dengan katalog ikan hias dan garansi D.O.A', 'Tampilan asli / Fish It'],
+  ['fish-it-live-20261023.png', 'Homepage Fish It terbaru dengan hero hijau, tulisan Sepotong dunia air, dan ikan cupang emas', 'Tampilan asli / Fish It'],
   ['warungku.png', 'Kode Flutter WarungKu dalam presentasi capstone', 'Cuplikan presentasi / WarungKu'],
   ['academic-login.png', 'Halaman masuk aplikasi akademik', 'Halaman masuk / Aplikasi akademik'],
   ['gotravel.png', 'Desain homepage GoTravel di Figma', 'Desain asli Figma / GoTravel'],
