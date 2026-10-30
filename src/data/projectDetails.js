@@ -165,5 +165,85 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Aplikasi Mobile POS: WarungKu",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+  },
+  {
+    "id": 3,
+    "slug": "sistem-informasi-akademik",
+    "title": "Sistem Informasi Akademik",
+    "image": "academic-login.png",
+    "category": "Web Development",
+    "summary": "Dashboard pembelajaran untuk pengelolaan mahasiswa, dosen, mata kuliah, dan rencana studi.",
+    "paragraphs": [
+      "Project ini menggabungkan halaman autentikasi dan dashboard administrasi akademik. Pengguna yang melewati pemeriksaan sesi di sisi klien dapat mengakses halaman data master dan rencana studi.",
+      "Komponen halaman menggunakan fungsi API berbasis Axios untuk mengambil dan mengubah data. Source menyediakan resource mahasiswa, dosen, mata kuliah, dan kelas; React Query membantu pemuatan serta pembaruan data pada hook yang tersedia.",
+      "Rencana studi menggabungkan beberapa data master untuk memilih mahasiswa, dosen, dan mata kuliah. Login dalam source adalah mekanisme demo. Versi ini tidak dideskripsikan sebagai autentikasi JWT atau sistem produksi yang sudah teruji."
+    ],
+    "features": [
+      "Halaman masuk dan registrasi demo",
+      "Pengelolaan mahasiswa, dosen, dan mata kuliah",
+      "Rencana studi dengan data master",
+      "Navigasi halaman admin terproteksi di sisi klien"
+    ],
+    "stack": [
+      [
+        "React",
+        "Frontend",
+        "Merender halaman autentikasi dan administrasi."
+      ],
+      [
+        "React Router",
+        "Routing",
+        "Mendefinisikan halaman dan layout melalui RouterProvider."
+      ],
+      [
+        "Axios",
+        "Akses data",
+        "Mengirim permintaan resource akademik melalui lapisan API."
+      ],
+      [
+        "TanStack Query",
+        "Data frontend",
+        "Mengelola query dan perubahan data melalui hook mahasiswa, dosen, kelas, dan mata kuliah."
+      ],
+      [
+        "Tailwind CSS",
+        "Tampilan",
+        "Menyusun styling halaman aplikasi."
+      ],
+      [
+        "json-server",
+        "API demo",
+        "Script serve menyediakan resource dari berkas data JSON."
+      ]
+    ],
+    "workflow": [
+      "Masuk demo",
+      "Buka halaman admin",
+      "Ambil data master",
+      "Isi / ubah data",
+      "Muat ulang daftar"
+    ],
+    "architecture": [
+      "React Router + Context",
+      "Halaman & hook query",
+      "Axios API layer",
+      "API resource demo"
+    ],
+    "verification": "Build lokal lolos. Lint repo menghasilkan 13 error; tidak tersedia script test. Alur backend dan akun belum diverifikasi saat runtime. Aset preview memperlihatkan halaman masuk, bukan dashboard setelah login.",
+    "links": [
+      {
+        "label": "Website",
+        "href": "https://tugas-akhir-pemsik.vercel.app/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Nadzirin26/Tugas-Akhir-PEMSIK"
+      }
+    ],
+    "challenges": [],
+    "status": "Build terverifikasi · integrasi belum diverifikasi",
+    "design": false,
+    "alt": "Preview Sistem Informasi Akademik",
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
   }
 ];
