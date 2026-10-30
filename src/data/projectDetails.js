@@ -424,5 +424,101 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Kartu Ucapan Ulang Tahun Interaktif",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+  },
+  {
+    "id": 7,
+    "slug": "teduh",
+    "title": "Teduh — Teman Cerita Berbasis AI",
+    "image": "teduh.png",
+    "category": "Web Development",
+    "summary": "Ruang bercerita berbahasa Indonesia dengan mode percakapan, kata penyemangat, dan latihan napas.",
+    "paragraphs": [
+      "Teduh menyediakan ruang percakapan, koleksi kata penyemangat, serta latihan napas dan grounding. Pengunjung menggunakan aplikasi tanpa membuat akun. Aplikasi bukan pengganti layanan profesional.",
+      "Frontend React berkomunikasi dengan pipeline chat di server. Pipeline memvalidasi masukan, melakukan pemeriksaan risiko, dan mengirim jawaban bertahap melalui Server-Sent Events. Implementasi Express dan Vercel Function memakai penanganan chat bersama.",
+      "Dalam mode demo, jawaban berasal dari respons contoh lokal yang dikirim bertahap. Adapter penyedia AI kompatibel OpenAI tersedia pada source, tetapi koneksi model eksternal memerlukan konfigurasi server dan belum diverifikasi pada audit ini.",
+      "Riwayat percakapan disimpan terbatas pada browser. Mode tanpa simpan menghapus riwayat lokal dan menjaga percakapan di memori halaman. Tidak ada database aplikasi pada snapshot yang diperiksa."
+    ],
+    "features": [
+      "Tiga mode percakapan dan respons bertahap",
+      "Kata penyemangat serta favorit",
+      "Latihan napas dan grounding",
+      "Riwayat lokal dan mode tanpa simpan",
+      "Pemeriksaan risiko dan jalur bantuan pada pipeline"
+    ],
+    "stack": [
+      [
+        "React / TypeScript",
+        "Frontend",
+        "Mengelola halaman, mode chat, serta tipe pesan."
+      ],
+      [
+        "Tailwind CSS",
+        "Tampilan",
+        "Menyusun styling bersama stylesheet aplikasi."
+      ],
+      [
+        "Express",
+        "Backend",
+        "Melayani pipeline chat dan endpoint kesehatan pada server Node."
+      ],
+      [
+        "Vercel Functions",
+        "Deployment API",
+        "Membungkus handler chat yang sama tanpa membuka port server."
+      ],
+      [
+        "SSE",
+        "Transport",
+        "Mengirim status dan potongan jawaban secara bertahap ke browser."
+      ],
+      [
+        "localStorage",
+        "Penyimpanan",
+        "Menyimpan riwayat terbatas, preferensi, dan favorit pada perangkat."
+      ],
+      [
+        "Vitest / Testing Library",
+        "Pengujian",
+        "Menguji pipeline, storage, protokol SSE, dan komponen chat."
+      ],
+      [
+        "Vite",
+        "Build",
+        "Menghasilkan bundle frontend untuk hosting."
+      ]
+    ],
+    "workflow": [
+      "Pilih mode",
+      "Tulis pesan contoh",
+      "Validasi & pemeriksaan risiko",
+      "Terima respons bertahap",
+      "Simpan lokal atau gunakan mode privat"
+    ],
+    "architecture": [
+      "React client",
+      "Handler /api/chat",
+      "Pipeline pemeriksaan",
+      "Demo provider / adapter AI",
+      "SSE ke browser"
+    ],
+    "verification": "74 test lolos pada tujuh berkas; build dan lint lolos. Server demo lokal merespons health HTTP 200 dan chat HTTP 200 dengan text/event-stream serta 18 event SSE pada pesan pengujian. Test menggunakan mode demo dan mock, bukan bukti validasi klinis atau keberhasilan model eksternal. Status layanan AI pada deployment publik belum diuji dalam audit ini.",
+    "links": [
+      {
+        "label": "Website",
+        "href": "https://whay-no.vercel.app/"
+      },
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Nadzirin26/whay-no"
+      }
+    ],
+    "challenges": [
+      "Handler bersama dipakai Express dan Vercel sehingga pipeline tidak diduplikasi.",
+      "Penyimpanan browser memiliki fallback saat data rusak atau tidak tersedia."
+    ],
+    "status": "Source ditinjau",
+    "design": false,
+    "alt": "Preview Teduh — Teman Cerita Berbasis AI",
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
   }
 ];

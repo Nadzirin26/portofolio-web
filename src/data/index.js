@@ -96,7 +96,7 @@ export const projects = [
     labelGithub: "Lihat di GitHub",
     labelDemo: "Kunjungi Website",
     implementationNote: "Pengujian: Vitest, React Testing Library, ESLint, dan Lighthouse. Deployment: Vercel, Git, dan GitHub. Penyimpanan lokal tanpa database; tersedia mode demo.",
-    demoNote: "Status saat ini: website dapat diakses, tetapi chatbot AI belum aktif. Fitur percakapan AI masih dalam pengembangan."
+    demoNote: "Source menyediakan mode demo dengan respons contoh. Koneksi ke penyedia AI eksternal pada deployment publik belum diverifikasi dalam audit ini."
   }
 ];
 
