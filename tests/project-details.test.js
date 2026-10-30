@@ -29,3 +29,13 @@ test('each case study has a unique stable URL, valid preview, and complete verif
     for (const link of p.links) assert.ok(/^https:\/\//.test(link.href) || link.href.startsWith('/demos/'));
   }
 });
+
+test('every workflow and pipeline explains inputs, processing, outputs, branches and boundaries', () => {
+  for (const project of projectDetails) {
+    for (const [steps, explanation] of [[project.workflow, project.workflowExplanation], [project.architecture, project.pipelineExplanation]]) {
+      assert.ok(explanation.intro && explanation.limitation && explanation.branches.length, project.slug);
+      assert.deepEqual(steps, explanation.steps.map(s => s.title));
+      for (const step of explanation.steps) assert.ok(step.input && step.description && step.output, project.slug);
+    }
+  }
+});

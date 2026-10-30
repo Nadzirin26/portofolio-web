@@ -52,16 +52,17 @@ export const projectDetails = [
       ]
     ],
     "workflow": [
-      "Jelajahi katalog",
-      "Pilih produk & jumlah",
-      "Checkout simulasi",
-      "Pantau pesanan / ulasan"
+      "Temukan ikan",
+      "Susun keranjang",
+      "Periksa checkout",
+      "Simpan pesanan simulasi",
+      "Lanjutkan atau batalkan"
     ],
     "architecture": [
-      "Katalog lokal",
-      "State React",
-      "Fungsi marketplace",
-      "localStorage"
+      "Muat data",
+      "Terima interaksi",
+      "Proses aturan transaksi",
+      "Render dan simpan"
     ],
     "verification": "15 test lokal lolos; build dan lint lolos pada 30 Oktober 2026. Source berjalan melalui server Vite lokal. Tidak menguji transaksi sungguhan karena versi ini merupakan demo frontend.",
     "links": [
@@ -82,7 +83,82 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Platform Fish It",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
-    "role": "Pembuat aplikasi."
+    "role": "Pembuat aplikasi.",
+    "workflowExplanation": {
+      "intro": "Alur pembeli dimulai dari pencarian ikan hingga pesanan simulasi. Portal penjual memakai data demo yang sama pada browser tersebut.",
+      "steps": [
+        {
+          "title": "Temukan ikan",
+          "input": "Kata pencarian, kategori, dan pilihan urutan.",
+          "description": "Katalog disaring berdasarkan pilihan pengunjung. Detail produk membantu memeriksa harga, stok, dan ulasan sebelum memilih.",
+          "output": "Daftar produk yang sesuai."
+        },
+        {
+          "title": "Susun keranjang",
+          "input": "Produk dan jumlah yang dipilih.",
+          "description": "Pengunjung menambahkan barang dan mengatur jumlah. Keranjang menjadi masukan perhitungan checkout.",
+          "output": "Daftar barang beserta jumlahnya."
+        },
+        {
+          "title": "Periksa checkout",
+          "input": "Keranjang, sesi demo, metode penerimaan, dan pembayaran.",
+          "description": "Logika memeriksa jumlah serta stok. Barang dipisah per toko dan ongkir dihitung menurut metode penerimaan.",
+          "output": "Rincian total dan pesanan per toko."
+        },
+        {
+          "title": "Simpan pesanan simulasi",
+          "input": "Checkout yang valid.",
+          "description": "Sistem menyimpan salinan rincian produk pada pesanan, mengurangi stok, lalu mengosongkan keranjang. Pembayaran merupakan simulasi.",
+          "output": "Riwayat pesanan dan stok terbaru."
+        },
+        {
+          "title": "Lanjutkan atau batalkan",
+          "input": "Pesanan dan status saat ini.",
+          "description": "Pengunjung dapat mengikuti tahapan simulasi atau membatalkan pesanan yang belum diproses. Ulasan diberikan setelah pesanan selesai.",
+          "output": "Status, riwayat perubahan, dan ulasan."
+        }
+      ],
+      "branches": [
+        "Keranjang tidak valid atau stok tidak cukup → checkout ditolak untuk diperbaiki.",
+        "Ambil di toko → ongkir nol; pengiriman → ongkir per toko.",
+        "Pembatalan yang valid → stok dikembalikan satu kali."
+      ],
+      "limitation": "Tidak ada pembayaran, kurir, akun server, atau komunikasi penjual sungguhan."
+    },
+    "pipelineExplanation": {
+      "intro": "Pipeline berjalan di browser: data katalog dan state React diteruskan ke fungsi transaksi, kemudian hasilnya dirender serta disimpan lokal.",
+      "steps": [
+        {
+          "title": "Muat data",
+          "input": "Katalog awal dan data browser bila tersedia.",
+          "description": "Aplikasi memuat state demo. Data yang rusak atau tidak dapat dibaca ditangani melalui fallback.",
+          "output": "State awal katalog, keranjang, dan pesanan."
+        },
+        {
+          "title": "Terima interaksi",
+          "input": "Pencarian, klik produk, perubahan keranjang, atau aksi penjual.",
+          "description": "Komponen React mengubah state atau memanggil fungsi logika marketplace sesuai tindakan.",
+          "output": "Permintaan perubahan state."
+        },
+        {
+          "title": "Proses aturan transaksi",
+          "input": "State dan parameter checkout/pesanan.",
+          "description": "Fungsi marketplace menghitung ongkir, memeriksa stok, membuat snapshot pesanan, atau memproses pembatalan.",
+          "output": "State baru atau pesan penolakan."
+        },
+        {
+          "title": "Render dan simpan",
+          "input": "State yang sudah diperbarui.",
+          "description": "React menampilkan hasil. Aplikasi menyimpan state pada localStorage dan menangani kegagalan penyimpanan.",
+          "output": "UI terbaru dan salinan lokal untuk kunjungan berikutnya."
+        }
+      ],
+      "branches": [
+        "Data penyimpanan tidak tersedia → aplikasi memakai state demo yang dapat dimuat.",
+        "Penyimpanan gagal → pengguna diberi pemberitahuan; tidak diasumsikan tersinkron ke server."
+      ],
+      "limitation": "Arsitektur ini mendokumentasikan demo frontend pada snapshot source, bukan backend CI4/MySQL."
+    }
   },
   {
     "id": 2,
@@ -136,17 +212,17 @@ export const projectDetails = [
       ]
     ],
     "workflow": [
-      "Masuk / pilih produk",
-      "Isi keranjang",
+      "Masuk dan pilih menu",
+      "Pilih barang",
       "Pilih pembayaran",
-      "Simpan transaksi",
-      "Lihat laporan"
+      "Catat transaksi",
+      "Tinjau dan laporkan"
     ],
     "architecture": [
-      "UI Flutter",
-      "Provider",
-      "Repository",
-      "Supabase + cache SQLite"
+      "Tampilkan halaman Flutter",
+      "Kelola state",
+      "Akses repository",
+      "Simpan dan gunakan cache"
     ],
     "verification": "Analisis statis. flutter pub get, flutter analyze, dan flutter build apk --debug dicoba; proses dependency gagal menulis active_roots pada cache Pub. Build/runtime perangkat belum diverifikasi. Tidak ditemukan test Dart pada repo yang diperiksa. Backend Supabase tidak dimodifikasi.",
     "links": [
@@ -166,7 +242,81 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Aplikasi Mobile POS: WarungKu",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
-    "role": "Pembuat aplikasi."
+    "role": "Pembuat aplikasi.",
+    "workflowExplanation": {
+      "intro": "Alur POS menghubungkan pemilihan produk, pembayaran, pencatatan transaksi, dan pelaporan. Urutan ini ditelusuri dari source; belum diuji pada perangkat.",
+      "steps": [
+        {
+          "title": "Masuk dan pilih menu",
+          "input": "Akun serta profil pengguna.",
+          "description": "Supabase Auth menangani sesi. Controller memuat profil dan peran untuk menentukan akses halaman.",
+          "output": "Sesi dan halaman sesuai peran."
+        },
+        {
+          "title": "Pilih barang",
+          "input": "Daftar produk atau hasil pemindaian barcode.",
+          "description": "Pengguna memilih barang dan jumlah. State keranjang menyediakan rincian untuk checkout.",
+          "output": "Keranjang transaksi."
+        },
+        {
+          "title": "Pilih pembayaran",
+          "input": "Keranjang, total, dan metode pembayaran.",
+          "description": "Repository menyiapkan data transaksi. Pembayaran QR diberi status pending, sedangkan jalur lain mengikuti aturan yang ada pada source.",
+          "output": "Header transaksi dan daftar item."
+        },
+        {
+          "title": "Catat transaksi",
+          "input": "Data pembayaran dan item.",
+          "description": "Repository menulis header serta item ke Supabase, lalu memperbarui cache transaksi lokal.",
+          "output": "Catatan transaksi dengan statusnya."
+        },
+        {
+          "title": "Tinjau dan laporkan",
+          "input": "Transaksi yang tercatat.",
+          "description": "Halaman verifikasi, analitik, dan ekspor mengolah catatan untuk kebutuhan pengelolaan warung.",
+          "output": "Status pembayaran dan laporan."
+        }
+      ],
+      "branches": [
+        "Pembayaran QR → jalur verifikasi admin sebelum status ditandai paid.",
+        "Akses halaman mengikuti profil/peran dari source."
+      ],
+      "limitation": "Pemindaian kamera, database aktif, dan cetak perangkat belum diverifikasi; tidak mengklaim peningkatan waktu transaksi."
+    },
+    "pipelineExplanation": {
+      "intro": "Arsitektur memisahkan antarmuka Flutter, state Provider, repository data, dan cache perangkat.",
+      "steps": [
+        {
+          "title": "Tampilkan halaman Flutter",
+          "input": "State akun, produk, dan transaksi.",
+          "description": "Widget menyusun halaman katalog, keranjang, inventori, dan laporan.",
+          "output": "Kontrol yang dapat dipakai pengguna."
+        },
+        {
+          "title": "Kelola state",
+          "input": "Perubahan auth, produk, atau keranjang.",
+          "description": "Provider/ChangeNotifier memberi notifikasi agar UI mengikuti perubahan data.",
+          "output": "State yang dapat dibaca widget."
+        },
+        {
+          "title": "Akses repository",
+          "input": "Permintaan baca/tulis dari halaman atau state.",
+          "description": "Repository membentuk operasi Supabase untuk resource produk, profil, dan transaksi.",
+          "output": "Respons data atau kegagalan operasi."
+        },
+        {
+          "title": "Simpan dan gunakan cache",
+          "input": "Transaksi atau produk yang diperoleh.",
+          "description": "Local store memakai SQLite untuk menyimpan salinan data tertentu. Ini tidak membuktikan semua fitur dapat bekerja offline.",
+          "output": "Salinan data lokal dan hasil yang ditampilkan."
+        }
+      ],
+      "branches": [
+        "Repository transaksi menyimpan cache setelah pencatatan server.",
+        "Jalur baca tertentu menggunakan penanganan kegagalan dan cache; cakupannya mengikuti implementasi masing-masing repository."
+      ],
+      "limitation": "Runtime terhambat cache Pub. Konsistensi database, kebijakan akses, dan skenario offline penuh belum diuji."
+    }
   },
   {
     "id": 3,
@@ -219,17 +369,16 @@ export const projectDetails = [
       ]
     ],
     "workflow": [
-      "Masuk demo",
-      "Buka halaman admin",
-      "Ambil data master",
-      "Isi / ubah data",
-      "Muat ulang daftar"
+      "Masuk ke aplikasi",
+      "Buka data master",
+      "Tambah atau ubah data",
+      "Susun rencana studi"
     ],
     "architecture": [
-      "React Router + Context",
-      "Halaman & hook query",
-      "Axios API layer",
-      "API resource demo"
+      "Pilih route",
+      "Kelola sesi dan query",
+      "Kirim permintaan API",
+      "Perbarui tampilan"
     ],
     "verification": "Build lokal lolos dan halaman masuk berhasil dibuka pada server Vite lokal. Lint repo menghasilkan 13 error; tidak tersedia script test. Alur backend dan akun belum diverifikasi saat runtime. Aset preview memperlihatkan halaman masuk, bukan dashboard setelah login.",
     "links": [
@@ -247,7 +396,75 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Sistem Informasi Akademik",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
-    "role": "Pembuat aplikasi."
+    "role": "Pembuat aplikasi.",
+    "workflowExplanation": {
+      "intro": "Alur administrasi menggunakan halaman login demo, data master, lalu rencana studi. Operasi data ditelusuri dari source; integrasi backend belum diuji menyeluruh.",
+      "steps": [
+        {
+          "title": "Masuk ke aplikasi",
+          "input": "Isian login.",
+          "description": "Lapisan autentikasi demo memuat pengguna dan menyimpan state sesi di browser. Ini bukan autentikasi JWT yang sudah diverifikasi.",
+          "output": "State pengguna untuk navigasi admin."
+        },
+        {
+          "title": "Buka data master",
+          "input": "Pilihan mahasiswa, dosen, atau mata kuliah.",
+          "description": "Halaman memanggil lapisan API untuk menampilkan data resource yang dipilih.",
+          "output": "Daftar data dan kontrol pengelolaan."
+        },
+        {
+          "title": "Tambah atau ubah data",
+          "input": "Isian formulir dan identitas record.",
+          "description": "Fungsi API membentuk permintaan penambahan, perubahan, atau penghapusan. UI memberikan umpan balik terhadap hasilnya.",
+          "output": "Data yang dimuat ulang atau pesan kegagalan."
+        },
+        {
+          "title": "Susun rencana studi",
+          "input": "Data kelas, mahasiswa, dosen, dan mata kuliah.",
+          "description": "Halaman memuat data master secara paralel dan menyediakan pilihan yang menghubungkan data akademik.",
+          "output": "Tampilan pengelolaan rencana studi."
+        }
+      ],
+      "branches": [
+        "Sesi tidak tersedia → akses halaman admin diperiksa oleh ProtectedRoute.",
+        "Permintaan data gagal → jalur error ditangani pada pemanggilan API/halaman; keberhasilan server belum diasumsikan."
+      ],
+      "limitation": "Halaman masuk lokal dan build berhasil; alur login, CRUD, serta penyimpanan backend belum diuji end-to-end."
+    },
+    "pipelineExplanation": {
+      "intro": "Frontend berlapis: router memilih halaman, Context menyimpan sesi demo, hook/lapisan API mengambil data, lalu halaman merender hasil.",
+      "steps": [
+        {
+          "title": "Pilih route",
+          "input": "URL halaman.",
+          "description": "React Router memasangkan URL dengan layout autentikasi atau admin. ProtectedRoute memeriksa akses sisi klien.",
+          "output": "Halaman aktif."
+        },
+        {
+          "title": "Kelola sesi dan query",
+          "input": "State pengguna serta kebutuhan data halaman.",
+          "description": "Context menyediakan sesi; hook React Query mengelola pemuatan/perubahan data pada resource yang menggunakan hook tersebut.",
+          "output": "Status loading, data, atau error."
+        },
+        {
+          "title": "Kirim permintaan API",
+          "input": "Resource dan parameter operasi.",
+          "description": "Axios menjalankan GET, POST, PUT, atau DELETE melalui fungsi API project.",
+          "output": "Respons resource akademik."
+        },
+        {
+          "title": "Perbarui tampilan",
+          "input": "Respons server atau kegagalan.",
+          "description": "State halaman dan query memperbarui tabel/formulir serta umpan balik pengguna.",
+          "output": "UI akademik terbaru."
+        }
+      ],
+      "branches": [
+        "Script serve menyediakan API demo json-server. Hubungan deployment dengan backend aktif belum diverifikasi.",
+        "Tidak semua halaman diasumsikan memakai React Query; halaman rencana studi juga memuat data melalui fungsi API secara langsung."
+      ],
+      "limitation": "Tidak menampilkan isi data akun, konfigurasi endpoint internal, atau mekanisme autentikasi sensitif."
+    }
   },
   {
     "id": 4,
@@ -276,17 +493,17 @@ export const projectDetails = [
       ]
     ],
     "workflow": [
-      "Homepage / tujuan",
+      "Jelajahi tujuan",
       "Isi perjalanan",
       "Pilih kursi",
-      "Info pemesanan",
-      "Tiket digital"
+      "Tinjau pemesanan",
+      "Lihat tiket"
     ],
     "architecture": [
-      "Frame homepage",
-      "Frame Pesan",
-      "Frame Info Pemesanan",
-      "Frame tiket"
+      "Homepage",
+      "Frame perjalanan",
+      "Frame konfirmasi",
+      "Frame keluaran"
     ],
     "verification": "File Figma dibuka dalam mode lihat. Overview canvas dan layar setelah mengetik destinasi ditinjau langsung. Hubungan seluruh interaksi prototype belum diuji end-to-end. Tidak ada dependency, endpoint, database, atau build aplikasi untuk desain ini.",
     "links": [
@@ -300,7 +517,79 @@ export const projectDetails = [
     "design": true,
     "alt": "Preview UI/UX GoTravel: Sistem Tiket Travel",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
-    "role": "Desainer UI/UX."
+    "role": "Desainer UI/UX.",
+    "workflowExplanation": {
+      "intro": "Workflow GoTravel adalah urutan layar desain Figma yang terlihat, bukan proses transaksi yang sudah berjalan di server.",
+      "steps": [
+        {
+          "title": "Jelajahi tujuan",
+          "input": "Homepage dengan pencarian dan kartu kota.",
+          "description": "Desain memberi titik awal untuk memilih tujuan perjalanan melalui hierarki konten mobile.",
+          "output": "Konteks tujuan perjalanan."
+        },
+        {
+          "title": "Isi perjalanan",
+          "input": "Layar Pesan.",
+          "description": "Screen menampilkan kelas layanan, kota asal/tujuan, tanggal, waktu, serta jumlah penumpang.",
+          "output": "Rincian perjalanan pada desain."
+        },
+        {
+          "title": "Pilih kursi",
+          "input": "Tombol Pilih Kursi dan variasi screen kursi.",
+          "description": "Canvas menyediakan variasi pemilihan kursi. Validasi ketersediaan kursi sungguhan tidak dibuktikan oleh desain.",
+          "output": "Representasi kursi yang dipilih."
+        },
+        {
+          "title": "Tinjau pemesanan",
+          "input": "Screen Info Pemesanan.",
+          "description": "Desain menampilkan formulir kontak, rincian harga, metode pembayaran, dan tombol Bayar.",
+          "output": "Ringkasan pemesanan pada desain."
+        },
+        {
+          "title": "Lihat tiket",
+          "input": "Screen tiket digital.",
+          "description": "Frame tiket memperlihatkan informasi perjalanan dan QR. Tidak ada bukti penerbitan tiket oleh sistem backend.",
+          "output": "Preview tiket digital."
+        }
+      ],
+      "branches": [
+        "Terdapat beberapa variasi frame pada canvas. Koneksi seluruh interaksi prototype belum diuji end-to-end."
+      ],
+      "limitation": "Tidak mengklaim pembayaran berhasil, kursi terpesan, atau QR dapat divalidasi oleh sistem nyata."
+    },
+    "pipelineExplanation": {
+      "intro": "Pipeline di sini menjelaskan struktur artefak desain. Tahapan riset, wireframe, dan usability tidak ditambahkan karena belum ada buktinya.",
+      "steps": [
+        {
+          "title": "Homepage",
+          "input": "Frame homepage yang tersedia.",
+          "description": "Banner, pencarian, dan pilihan kota membentuk titik masuk desain.",
+          "output": "Arah menuju informasi perjalanan."
+        },
+        {
+          "title": "Frame perjalanan",
+          "input": "Screen setelah mengetik destinasi.",
+          "description": "Elemen form disusun untuk merinci layanan, rute, tanggal, dan penumpang.",
+          "output": "Layar pemesanan terstruktur."
+        },
+        {
+          "title": "Frame konfirmasi",
+          "input": "Variasi kursi dan Info Pemesanan.",
+          "description": "Canvas memisahkan pilihan kursi dan ringkasan kontak/harga ke screen tersendiri.",
+          "output": "Rangkaian screen konfirmasi."
+        },
+        {
+          "title": "Frame keluaran",
+          "input": "Variasi tiket digital.",
+          "description": "Desain merepresentasikan keluaran yang diharapkan berupa tiket dengan QR.",
+          "output": "Artefak visual tiket."
+        }
+      ],
+      "branches": [
+        "Figma dipakai sebagai alat desain dan prototype; tidak ada proses build kode, API, atau database yang terverifikasi."
+      ],
+      "limitation": "Susunan frame bukan bukti proses riset atau otomatisasi pemesanan."
+    }
   },
   {
     "id": 5,
@@ -344,17 +633,18 @@ export const projectDetails = [
       ]
     ],
     "workflow": [
-      "Isi identitas contoh",
-      "Pilih lima skor",
-      "Tambahkan catatan",
-      "Lihat nilai & predikat",
-      "Cetak / simpan PDF"
+      "Isi identitas",
+      "Nilai lima indikator",
+      "Tambahkan evaluasi",
+      "Hitung dan baca laporan",
+      "Cetak atau revisi"
     ],
     "architecture": [
-      "Demo HTML",
-      "State memori halaman",
-      "Normalisasi skor",
-      "DOM laporan + cetak browser"
+      "Masukan demo HTML",
+      "Perhitungan demo",
+      "Render laporan demo",
+      "Ekspor demo",
+      "Jalur asli PHP — terpisah"
     ],
     "verification": "Kelima file PHP lolos pemeriksaan sintaks dan homepage PHP lokal merespons HTTP 200. Demo HTML dijalankan memakai identitas contoh; lima skor 3 menghasilkan nilai 100 dan predikat Sangat Baik. Integrasi PDF PHP perlu pengujian menyeluruh; hasil cetak browser bergantung pada perangkat. Tidak mengklaim versi demo mencakup seluruh indikator aplikasi asli.",
     "links": [
@@ -368,7 +658,86 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Aplikasi Penilaian Rencana Pembelajaran",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
-    "role": "Pembuat aplikasi."
+    "role": "Pembuat aplikasi.",
+    "workflowExplanation": {
+      "intro": "Alur berikut berlaku untuk demo HTML yang dapat dibuka dari portofolio. Versi ini berisi lima indikator dan berjalan seluruhnya di browser.",
+      "steps": [
+        {
+          "title": "Isi identitas",
+          "input": "Sekolah, pelajaran, kelas, semester, penilai, penyusun, tanggal, dan kota.",
+          "description": "Form memvalidasi isian yang wajib. Tombol Isi Data Contoh menyediakan data fiktif untuk mencoba aplikasi.",
+          "output": "Identitas laporan dalam memori halaman."
+        },
+        {
+          "title": "Nilai lima indikator",
+          "input": "Pilihan skor 1–3 untuk tiap indikator.",
+          "description": "Kriteria dijelaskan sesuai pilihan dan indikator kemajuan diperbarui.",
+          "output": "Lima skor yang sudah diisi."
+        },
+        {
+          "title": "Tambahkan evaluasi",
+          "input": "Catatan temuan dan saran.",
+          "description": "Form mewajibkan catatan sebelum menampilkan hasil penilaian.",
+          "output": "Catatan yang menyertai skor."
+        },
+        {
+          "title": "Hitung dan baca laporan",
+          "input": "Total skor maksimal 15 dan identitas.",
+          "description": "Nilai dibulatkan dari total/15 × 100, lalu dipetakan ke predikat. Laporan memuat rekap kategori, catatan, dan bagian tanda tangan.",
+          "output": "Nilai skala 100 dan laporan di layar."
+        },
+        {
+          "title": "Cetak atau revisi",
+          "input": "Laporan yang sudah ditampilkan.",
+          "description": "Cetak / Simpan PDF membuka dialog browser. Edit Penilaian mengembalikan pengguna ke rubrik.",
+          "output": "Dokumen cetak/PDF browser atau hasil revisi."
+        }
+      ],
+      "branches": [
+        "Isian wajib belum lengkap → form tidak dilanjutkan.",
+        "Penilaian baru → meminta konfirmasi sebelum mengosongkan halaman."
+      ],
+      "limitation": "Data demo hilang saat reload. PDF demo berasal dari browser, bukan mPDF."
+    },
+    "pipelineExplanation": {
+      "intro": "Ada dua implementasi berbeda: pipeline demo HTML dan pipeline aplikasi PHP asli. Keduanya tidak boleh disamakan.",
+      "steps": [
+        {
+          "title": "Masukan demo HTML",
+          "input": "Form identitas, lima skor, dan catatan.",
+          "description": "Event form ditangani JavaScript tanpa request backend.",
+          "output": "State sementara di memori halaman."
+        },
+        {
+          "title": "Perhitungan demo",
+          "input": "Skor setiap indikator.",
+          "description": "JavaScript menjumlahkan skor dan menormalisasi ke 100 dengan maksimum 15.",
+          "output": "Nilai dan predikat."
+        },
+        {
+          "title": "Render laporan demo",
+          "input": "Identitas, rekap, dan hasil perhitungan.",
+          "description": "DOM laporan diisi kembali dengan data hasil penilaian.",
+          "output": "Laporan yang terlihat di browser."
+        },
+        {
+          "title": "Ekspor demo",
+          "input": "Aksi Cetak / Simpan PDF.",
+          "description": "window.print memanggil fasilitas cetak perangkat. Pengguna memilih menyimpan PDF pada dialog tersebut.",
+          "output": "PDF yang dibuat browser."
+        },
+        {
+          "title": "Jalur asli PHP — terpisah",
+          "input": "Form identitas dan rubrik asli.",
+          "description": "File PHP mengolah data formulir; generate_pdf.php menyusun HTML dan memanggil mPDF. Jalur ini tidak dijalankan oleh demo HTML.",
+          "output": "PDF server pada implementasi asli, belum diuji penuh."
+        }
+      ],
+      "branches": [
+        "Demo memakai lima indikator. Rubrik serta rumus PHP asli berbeda dan memerlukan validasi tersendiri."
+      ],
+      "limitation": "Sintaks PHP dan homepage lokal telah diperiksa; pembuatan PDF asli belum terverifikasi end-to-end."
+    }
   },
   {
     "id": 6,
@@ -408,16 +777,16 @@ export const projectDetails = [
     ],
     "workflow": [
       "Buka kartu",
-      "Baca ucapan",
-      "Lanjut / kembali",
-      "Lihat penutup",
-      "Baca lagi"
+      "Pilih cara navigasi",
+      "Baca ucapan berikutnya",
+      "Rayakan penutup",
+      "Baca ulang"
     ],
     "architecture": [
-      "Satu file HTML",
-      "Event tombol / keyboard / sentuh",
-      "State indeks halaman",
-      "Halaman aktif & efek visual"
+      "Muat dokumen",
+      "Terima event",
+      "Ubah state halaman",
+      "Jalankan efek seperlunya"
     ],
     "verification": "Demo dijalankan di browser: pembuka, tombol lanjut, panah keyboard, indikator halaman, serta penutup dengan 45 elemen confetti berhasil diperiksa. Tidak membutuhkan build atau dependency tambahan. Listener gestur dan reduced motion ditinjau statis. Gestur sentuh memerlukan uji perangkat nyata untuk memastikan perilaku browser spesifik.",
     "links": [
@@ -434,7 +803,81 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Kartu Ucapan Ulang Tahun Interaktif",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
-    "role": "Pembuat aplikasi."
+    "role": "Pembuat aplikasi.",
+    "workflowExplanation": {
+      "intro": "Pengunjung membaca kartu secara bertahap. Semua navigasi mengubah halaman aktif dalam dokumen HTML yang sama.",
+      "steps": [
+        {
+          "title": "Buka kartu",
+          "input": "Tombol pada layar sambutan.",
+          "description": "Interaksi membuka konten kartu dan memindahkan fokus ke heading pertama.",
+          "output": "Halaman ucapan pertama."
+        },
+        {
+          "title": "Pilih cara navigasi",
+          "input": "Tombol lanjut/kembali, indikator, panah keyboard, atau geser horizontal.",
+          "description": "Listener menerjemahkan tindakan menjadi indeks halaman yang ingin dibuka.",
+          "output": "Permintaan perpindahan halaman."
+        },
+        {
+          "title": "Baca ucapan berikutnya",
+          "input": "Indeks halaman yang valid.",
+          "description": "Halaman lama disembunyikan, halaman baru ditampilkan, counter diperbarui, dan fokus heading dipindahkan.",
+          "output": "Satu halaman aktif dengan posisi baca yang jelas."
+        },
+        {
+          "title": "Rayakan penutup",
+          "input": "Halaman kelima.",
+          "description": "Aplikasi menambahkan confetti sementara bila reduced motion tidak aktif. Tombol berubah menjadi Baca lagi.",
+          "output": "Ucapan penutup dan pilihan mengulang."
+        },
+        {
+          "title": "Baca ulang",
+          "input": "Tombol Baca lagi.",
+          "description": "Indeks dikembalikan ke awal dan kontrol navigasi diperbarui.",
+          "output": "Halaman pertama tanpa memuat backend."
+        }
+      ],
+      "branches": [
+        "Kembali pada halaman pertama dinonaktifkan.",
+        "Indeks di luar rentang atau sama dengan halaman aktif diabaikan."
+      ],
+      "limitation": "Gestur sentuh ditinjau dari listener source; perilaku tiap browser HP belum diuji pada perangkat nyata."
+    },
+    "pipelineExplanation": {
+      "intro": "Pipeline bersifat event-driven: satu file memuat struktur, gaya, dan pengendali halaman. Tidak ada API, akun, atau database.",
+      "steps": [
+        {
+          "title": "Muat dokumen",
+          "input": "HTML, style, dan script dalam satu file.",
+          "description": "Browser membentuk lima section, kontrol halaman, dan layar sambutan.",
+          "output": "Tampilan pembuka dan referensi elemen DOM."
+        },
+        {
+          "title": "Terima event",
+          "input": "Klik, keydown, touchstart, atau touchend.",
+          "description": "Script membaca arah/tujuan navigasi serta memeriksa kondisi yang perlu diabaikan.",
+          "output": "Indeks halaman berikutnya."
+        },
+        {
+          "title": "Ubah state halaman",
+          "input": "Indeks yang diterima.",
+          "description": "show(index) mengubah hidden, kelas aktif, indikator, dan fokus heading.",
+          "output": "DOM yang sesuai halaman aktif."
+        },
+        {
+          "title": "Jalankan efek seperlunya",
+          "input": "Halaman penutup serta preferensi reduced motion.",
+          "description": "Animasi dijalankan sesuai preferensi. Elemen confetti dihapus setelah waktunya selesai.",
+          "output": "Efek visual sementara tanpa penyimpanan server."
+        }
+      ],
+      "branches": [
+        "Reduced motion → animasi dan partikel dinonaktifkan.",
+        "Aksi navigasi keyboard tidak diproses sebelum kartu dibuka."
+      ],
+      "limitation": "Confetti merupakan efek DOM lokal; tidak ada proses generasi AI atau penyimpanan pesan."
+    }
   },
   {
     "id": 7,
@@ -499,18 +942,18 @@ export const projectDetails = [
       ]
     ],
     "workflow": [
-      "Pilih mode",
-      "Tulis pesan contoh",
-      "Validasi & pemeriksaan risiko",
+      "Pilih ruang dan mode",
+      "Tulis pesan",
+      "Periksa permintaan",
       "Terima respons bertahap",
-      "Simpan lokal atau gunakan mode privat"
+      "Tentukan penyimpanan"
     ],
     "architecture": [
-      "React client",
-      "Handler /api/chat",
-      "Pipeline pemeriksaan",
-      "Demo provider / adapter AI",
-      "SSE ke browser"
+      "Bangun UI dan konteks",
+      "Masuk ke handler",
+      "Pemeriksaan dan pemilihan jalur",
+      "Hasilkan respons",
+      "Kirim SSE dan render"
     ],
     "verification": "74 test lolos pada tujuh berkas; build dan lint lolos. Server demo lokal merespons health HTTP 200 dan chat HTTP 200 dengan text/event-stream serta 18 event SSE pada pesan pengujian. Test menggunakan mode demo dan mock, bukan bukti validasi klinis atau keberhasilan model eksternal. Status layanan AI pada deployment publik belum diuji dalam audit ini.",
     "links": [
@@ -531,6 +974,87 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Teduh — Teman Cerita Berbasis AI",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
-    "role": "Pembuat aplikasi."
+    "role": "Pembuat aplikasi.",
+    "workflowExplanation": {
+      "intro": "Alur percakapan menggabungkan pilihan mode, pemeriksaan masukan, respons bertahap, dan keputusan penyimpanan lokal.",
+      "steps": [
+        {
+          "title": "Pilih ruang dan mode",
+          "input": "Pilihan bercerita, saran, atau penyemangat.",
+          "description": "Halaman chat memakai mode pilihan sebagai konteks untuk permintaan jawaban. Pengguna dapat memilih mode tanpa simpan.",
+          "output": "Konteks percakapan dan preferensi penyimpanan."
+        },
+        {
+          "title": "Tulis pesan",
+          "input": "Teks yang diketik pengguna.",
+          "description": "Client menyiapkan pesan dan konteks percakapan untuk handler chat. Tidak ada pembuatan akun pada aplikasi.",
+          "output": "Permintaan percakapan."
+        },
+        {
+          "title": "Periksa permintaan",
+          "input": "Payload pesan dan mode.",
+          "description": "Server memvalidasi masukan dan menjalankan pemeriksaan risiko sebelum menentukan jalur respons.",
+          "output": "Status pemeriksaan dan pilihan jalur jawaban."
+        },
+        {
+          "title": "Terima respons bertahap",
+          "input": "Jawaban contoh demo atau keluaran adapter AI yang terkonfigurasi.",
+          "description": "Event SSE membawa status dan potongan teks ke browser. UI menampilkan jawaban secara bertahap.",
+          "output": "Pesan jawaban dan status percakapan."
+        },
+        {
+          "title": "Tentukan penyimpanan",
+          "input": "Percakapan dan preferensi pengguna.",
+          "description": "Mode biasa menyimpan riwayat terbatas lokal. Mode tanpa simpan menghapus riwayat lokal dan mempertahankan pesan di memori halaman.",
+          "output": "Riwayat perangkat atau percakapan sementara."
+        }
+      ],
+      "branches": [
+        "Risiko yang memerlukan bantuan → jalur respons terkurasi dan kartu bantuan; bukan diagnosis klinis.",
+        "Mode tanpa simpan → riwayat lokal dihapus; ini bukan janji tentang retensi penyedia eksternal."
+      ],
+      "limitation": "Audit runtime memakai mode demo. Layanan model AI eksternal dan status deployment publik tidak diasumsikan aktif."
+    },
+    "pipelineExplanation": {
+      "intro": "Frontend dan backend dihubungkan melalui handler chat bersama. Jalur demo dan adapter AI memiliki keluaran streaming yang dikonsumsi UI.",
+      "steps": [
+        {
+          "title": "Bangun UI dan konteks",
+          "input": "State React, mode, serta pesan.",
+          "description": "Client TypeScript menyusun permintaan dan menyiapkan tampilan loading/streaming.",
+          "output": "Payload untuk endpoint chat."
+        },
+        {
+          "title": "Masuk ke handler",
+          "input": "Permintaan /api/chat.",
+          "description": "Express lokal atau Vercel Function menggunakan handler pipeline yang sama. Ini menghindari duplikasi logika chat.",
+          "output": "Permintaan tervalidasi untuk pemrosesan."
+        },
+        {
+          "title": "Pemeriksaan dan pemilihan jalur",
+          "input": "Pesan dan hasil pemeriksaan risiko.",
+          "description": "Pipeline menjalankan aturan pemeriksaan serta menentukan respons terkurasi, demo, atau adapter penyedia yang tersedia.",
+          "output": "Jalur respons yang diizinkan."
+        },
+        {
+          "title": "Hasilkan respons",
+          "input": "Konteks dan mode percakapan.",
+          "description": "Demo memakai teks contoh lokal. Adapter kompatibel OpenAI memakai konfigurasi server bila disediakan.",
+          "output": "Potongan jawaban atau status kegagalan."
+        },
+        {
+          "title": "Kirim SSE dan render",
+          "input": "Event status serta potongan teks.",
+          "description": "Browser membaca event dan memperbarui pesan. Preferensi privat mengatur apakah riwayat ditulis ke localStorage.",
+          "output": "Jawaban di UI dan penyimpanan lokal sesuai pilihan."
+        }
+      ],
+      "branches": [
+        "Mode demo → tidak memanggil penyedia model eksternal.",
+        "Jalur risiko tertentu → respons terkurasi tanpa generasi model.",
+        "Penyimpanan browser ditolak/rusak → fallback dan pemberitahuan sesuai implementasi."
+      ],
+      "limitation": "Tidak mempublikasikan aturan deteksi sensitif, secret, atau isi percakapan nyata. Hasil test bukan bukti validasi klinis."
+    }
   }
 ];
