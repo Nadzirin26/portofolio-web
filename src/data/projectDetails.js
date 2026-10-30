@@ -359,5 +359,70 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Aplikasi Penilaian Rencana Pembelajaran",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+  },
+  {
+    "id": 6,
+    "slug": "kartu-ulang-tahun",
+    "title": "Kartu Ucapan Ulang Tahun Interaktif",
+    "image": "kartu-ulang-tahun.png",
+    "category": "Web Development",
+    "summary": "Kartu digital lima halaman dengan transisi, navigasi, dan perayaan confetti.",
+    "paragraphs": [
+      "Kartu ini menyampaikan ucapan secara bertahap. Pengunjung membuka layar sambutan, kemudian membaca lima halaman yang berisi ucapan, apresiasi, dan harapan.",
+      "Seluruh markup, styling, serta logika berada dalam satu file HTML. JavaScript mengganti halaman aktif, memperbarui indikator, dan memindahkan fokus heading agar navigasi keyboard mengikuti konten baru.",
+      "Tombol, panah keyboard, serta gestur horizontal ditangani oleh event listener. Halaman terakhir menampilkan confetti dan tombol baca ulang. Saat preferensi reduced motion aktif, efek gerak dinonaktifkan. Tidak ada backend, akun, atau database."
+    ],
+    "features": [
+      "Layar pembuka dan lima halaman ucapan",
+      "Navigasi tombol dan indikator halaman",
+      "Tombol panah keyboard",
+      "Listener gestur geser horizontal",
+      "Confetti dan penghormatan preferensi reduced motion"
+    ],
+    "stack": [
+      [
+        "HTML5",
+        "Struktur",
+        "Menyusun halaman ucapan, heading, dan kontrol berlabel."
+      ],
+      [
+        "CSS3",
+        "Tampilan",
+        "Mengatur breakpoint mobile, transisi, partikel, dan reduced motion."
+      ],
+      [
+        "Vanilla JavaScript",
+        "Interaksi",
+        "Mengganti halaman, mengelola fokus, serta membuat confetti sementara."
+      ]
+    ],
+    "workflow": [
+      "Buka kartu",
+      "Baca ucapan",
+      "Lanjut / kembali",
+      "Lihat penutup",
+      "Baca lagi"
+    ],
+    "architecture": [
+      "Satu file HTML",
+      "Event tombol / keyboard / sentuh",
+      "State indeks halaman",
+      "Halaman aktif & efek visual"
+    ],
+    "verification": "Demo dijalankan di browser: pembuka, tombol lanjut, panah keyboard, indikator halaman, serta penutup dengan 45 elemen confetti berhasil diperiksa. Tidak membutuhkan build atau dependency tambahan. Listener gestur dan reduced motion ditinjau statis. Gestur sentuh memerlukan uji perangkat nyata untuk memastikan perilaku browser spesifik.",
+    "links": [
+      {
+        "label": "Buka kartu",
+        "href": "/demos/kartu-ulang-tahun/index.html"
+      }
+    ],
+    "challenges": [
+      "Halaman yang tidak aktif disembunyikan dan fokus dipindahkan ke heading halaman baru.",
+      "Confetti dihapus setelah animasi; reduced motion menonaktifkan efek."
+    ],
+    "status": "Demo HTML interaktif",
+    "design": false,
+    "alt": "Preview Kartu Ucapan Ulang Tahun Interaktif",
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
   }
 ];
