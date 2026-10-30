@@ -292,5 +292,72 @@ export const projectDetails = [
     "design": true,
     "alt": "Preview UI/UX GoTravel: Sistem Tiket Travel",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+  },
+  {
+    "id": 5,
+    "slug": "penilaian-rencana-pembelajaran",
+    "title": "Aplikasi Penilaian Rencana Pembelajaran",
+    "image": "penilaian-pembelajaran.png",
+    "category": "Web Development",
+    "summary": "Instrumen evaluasi rencana pembelajaran dengan rubrik, rekap nilai, dan laporan.",
+    "paragraphs": [
+      "Aplikasi membantu penilai mencatat identitas rencana pembelajaran dan menilai indikator secara terstruktur. Source PHP menyediakan formulir identitas, rubrik, halaman hasil, dan generator laporan.",
+      "Pada versi PHP, data formulir diteruskan ke proses penilaian dan pembuatan laporan. Generator menggunakan mPDF untuk menyusun dokumen dari HTML. Source menunjukkan Bootstrap pada halaman dan JavaScript pada interaksi formulir.",
+      "Demo yang tersedia bagi pengunjung portofolio merupakan versi HTML tersendiri dengan lima indikator. Nilai dinormalisasi dari skor maksimal 15 ke skala 100. Catatan dan identitas ditampilkan kembali di laporan, lalu PDF disimpan melalui fasilitas cetak browser. Demo ini tidak menjalankan PHP atau mPDF."
+    ],
+    "features": [
+      "Identitas sekolah, pelajaran, kelas, penilai, dan tanggal",
+      "Rubrik demo dengan skor 1–3",
+      "Nilai skala 100 serta predikat",
+      "Catatan evaluasi dan rekap kategori",
+      "Laporan demo yang dapat dicetak"
+    ],
+    "stack": [
+      [
+        "PHP",
+        "Aplikasi asli",
+        "Menangani formulir identitas dan menyusun laporan pada source asli."
+      ],
+      [
+        "Bootstrap",
+        "UI asli",
+        "Mengatur layout formulir dan halaman PHP."
+      ],
+      [
+        "mPDF",
+        "Laporan asli",
+        "Mengubah HTML laporan menjadi PDF di generate_pdf.php."
+      ],
+      [
+        "HTML / CSS / JavaScript",
+        "Demo publik",
+        "Menjalankan alur ringkas identitas, lima indikator, hasil, dan cetak di browser."
+      ]
+    ],
+    "workflow": [
+      "Isi identitas contoh",
+      "Pilih lima skor",
+      "Tambahkan catatan",
+      "Lihat nilai & predikat",
+      "Cetak / simpan PDF"
+    ],
+    "architecture": [
+      "Demo HTML",
+      "State memori halaman",
+      "Normalisasi skor",
+      "DOM laporan + cetak browser"
+    ],
+    "verification": "Kelima file PHP lolos pemeriksaan sintaks dan homepage PHP lokal merespons HTTP 200. Demo HTML dijalankan memakai identitas contoh; lima skor 3 menghasilkan nilai 100 dan predikat Sangat Baik. Integrasi PDF PHP perlu pengujian menyeluruh; hasil cetak browser bergantung pada perangkat. Tidak mengklaim versi demo mencakup seluruh indikator aplikasi asli.",
+    "links": [
+      {
+        "label": "Demo interaktif",
+        "href": "/demos/penilaian-rencana-pembelajaran/index.html"
+      }
+    ],
+    "challenges": [],
+    "status": "Demo HTML · source PHP ditinjau",
+    "design": false,
+    "alt": "Preview Aplikasi Penilaian Rencana Pembelajaran",
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
   }
 ];
