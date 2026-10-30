@@ -1,6 +1,7 @@
 import { projects } from '../data';
 import { FiArrowUpRight, FiGithub, FiExternalLink, FiPlay, FiFigma, FiCode } from 'react-icons/fi';
 import Reveal from '../components/Reveal';
+import { projectDetails } from '../data/projectDetails';
 
 const visuals = [
   ['fish-it-live-20261023.png', 'Homepage Fish It terbaru dengan hero hijau, tulisan Sepotong dunia air, dan ikan cupang emas', 'Tampilan asli / Fish It'],
@@ -39,6 +40,7 @@ export default function Projects() {
               <ul className="project-technologies" aria-label="Teknologi proyek">{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul>
               {project.implementationNote && <p className="project-implementation-note">{project.implementationNote}</p>}
               <div className="action-row">
+                {projectDetails.find(p => p.id === project.id) && <a className="button" href={`/projects/${projectDetails.find(p => p.id === project.id).slug}`}>Lihat Detail <FiArrowUpRight aria-hidden="true" /></a>}
                 {project.demo ? <>
                   {project.github && <a className="button" href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelGithub}: ${project.title} (tab baru)`}><FiGithub aria-hidden="true" />{project.labelGithub}</a>}
                   <a className="button button-primary" href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelDemo}: ${project.title} (tab baru)`}>{index === 1 ? <FiPlay aria-hidden="true" /> : <FiExternalLink aria-hidden="true" />}{project.labelDemo}</a>
