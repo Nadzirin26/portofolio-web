@@ -245,5 +245,52 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Sistem Informasi Akademik",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+  },
+  {
+    "id": 4,
+    "slug": "gotravel",
+    "title": "UI/UX GoTravel: Sistem Tiket Travel",
+    "image": "gotravel.png",
+    "category": "UI/UX Design",
+    "summary": "Eksplorasi antarmuka mobile untuk layanan perjalanan, dibuat melalui Figma.",
+    "paragraphs": [
+      "GoTravel dipresentasikan sebagai desain UI/UX, bukan aplikasi dengan backend. Preview yang tersedia menampilkan homepage layanan travel dengan banner, kolom pencarian tempat, dan kartu kota tujuan.",
+      "Desain berpusat pada pemilihan tujuan perjalanan. Screenshot memberi gambaran susunan konten dan hierarki visual pada layar mobile. Pada audit ini, interaksi prototipe lengkap, riset pengguna, dan proses iterasinya belum dapat diverifikasi dari source berkode.",
+      "Halaman ini membatasi pembahasan pada layar yang tersedia. Alur pembayaran, pemilihan kursi, dan penerbitan tiket tidak dinyatakan telah diimplementasikan sebagai aplikasi web."
+    ],
+    "features": [
+      "Homepage mobile",
+      "Pencarian tempat pada desain",
+      "Kartu kota tujuan perjalanan"
+    ],
+    "stack": [
+      [
+        "Figma",
+        "Desain",
+        "Media desain antarmuka dan akses file desain, bukan runtime aplikasi."
+      ]
+    ],
+    "workflow": [
+      "Lihat homepage",
+      "Temukan pencarian tempat",
+      "Lihat kartu tujuan"
+    ],
+    "architecture": [
+      "Susunan homepage",
+      "Hierarki pencarian",
+      "Pilihan kota"
+    ],
+    "verification": "Desain nonkode. Aset screenshot yang sudah ada ditinjau; tidak ada dependency, endpoint, database, build, atau test aplikasi untuk desain ini. Hubungan seluruh frame/prototype dan proses desain masih perlu konfirmasi.",
+    "links": [
+      {
+        "label": "Desain Figma",
+        "href": "https://www.figma.com/design/TV8WImVbNcfBnTDvqfjNlF/Untitled?node-id=0-1"
+      }
+    ],
+    "challenges": [],
+    "status": "Desain UI/UX · dokumentasi terbatas",
+    "design": true,
+    "alt": "Preview UI/UX GoTravel: Sistem Tiket Travel",
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
   }
 ];
