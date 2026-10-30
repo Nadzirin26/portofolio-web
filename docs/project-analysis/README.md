@@ -6,4 +6,4 @@
 - Warna aktual di override CSS: charcoal #202523, sage #c4d2b0, copper #dbab88, panel krem. Font sistem dan Georgia pada nama. Spacing shell responsif dan tombol yang sama dipakai ulang.
 - Source yang diunduh berada dalam tmp/ yang diabaikan Git dan ESLint. Tidak ada file .env, data akun, isi database, konfigurasi credential, atau foto pribadi baru yang dimasukkan ke dokumentasi.
 - Tanggal audit: 30 Oktober 2026. Hasil perintah adalah hasil lokal snapshot source saat audit, bukan jaminan status deployment eksternal.
-- Peran pribadi belum dikonfirmasi pengguna; tidak mengarang pembagian kontribusi. Konten peran disiapkan sebagai field opsional.
+- Peran pribadi dikonfirmasi pengguna: Pembuat aplikasi untuk project berkode dan Desainer UI/UX untuk GoTravel. Tidak mengarang rincian pembagian tugas.

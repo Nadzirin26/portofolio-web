@@ -1,4 +1,4 @@
-// Evidence-backed case studies. Unknown contributions are intentionally omitted.
+// Evidence-backed case studies. Roles confirmed by the portfolio owner.
 export const projectDetails = [
   {
     "id": 1,
@@ -81,7 +81,8 @@ export const projectDetails = [
     "status": "Source ditinjau",
     "design": false,
     "alt": "Preview Platform Fish It",
-    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
+    "role": "Pembuat aplikasi."
   },
   {
     "id": 2,
@@ -164,7 +165,8 @@ export const projectDetails = [
     "status": "Analisis statis · runtime belum diverifikasi",
     "design": false,
     "alt": "Preview Aplikasi Mobile POS: WarungKu",
-    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
+    "role": "Pembuat aplikasi."
   },
   {
     "id": 3,
@@ -229,7 +231,7 @@ export const projectDetails = [
       "Axios API layer",
       "API resource demo"
     ],
-    "verification": "Build lokal lolos. Lint repo menghasilkan 13 error; tidak tersedia script test. Alur backend dan akun belum diverifikasi saat runtime. Aset preview memperlihatkan halaman masuk, bukan dashboard setelah login.",
+    "verification": "Build lokal lolos dan halaman masuk berhasil dibuka pada server Vite lokal. Lint repo menghasilkan 13 error; tidak tersedia script test. Alur backend dan akun belum diverifikasi saat runtime. Aset preview memperlihatkan halaman masuk, bukan dashboard setelah login.",
     "links": [
       {
         "label": "Website",
@@ -244,7 +246,8 @@ export const projectDetails = [
     "status": "Build terverifikasi · integrasi belum diverifikasi",
     "design": false,
     "alt": "Preview Sistem Informasi Akademik",
-    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
+    "role": "Pembuat aplikasi."
   },
   {
     "id": 4,
@@ -254,14 +257,16 @@ export const projectDetails = [
     "category": "UI/UX Design",
     "summary": "Eksplorasi antarmuka mobile untuk layanan perjalanan, dibuat melalui Figma.",
     "paragraphs": [
-      "GoTravel dipresentasikan sebagai desain UI/UX, bukan aplikasi dengan backend. Preview yang tersedia menampilkan homepage layanan travel dengan banner, kolom pencarian tempat, dan kartu kota tujuan.",
-      "Desain berpusat pada pemilihan tujuan perjalanan. Screenshot memberi gambaran susunan konten dan hierarki visual pada layar mobile. Pada audit ini, interaksi prototipe lengkap, riset pengguna, dan proses iterasinya belum dapat diverifikasi dari source berkode.",
-      "Halaman ini membatasi pembahasan pada layar yang tersedia. Alur pembayaran, pemilihan kursi, dan penerbitan tiket tidak dinyatakan telah diimplementasikan sebagai aplikasi web."
+      "GoTravel adalah desain UI/UX mobile untuk layanan perjalanan. Homepage menampilkan banner, pencarian tempat, dan kartu kota. File Figma dapat diakses dalam mode lihat dan memuat variasi layar homepage, pemesanan, informasi tiket, serta tiket digital.",
+      "Layar Pesan memuat kelas layanan, kota keberangkatan, kota tujuan, tanggal, waktu, jumlah penumpang, dan tombol pemilihan kursi. Layar Info Pemesanan menampilkan formulir kontak serta rincian harga dan tombol pembayaran. Overview canvas juga memperlihatkan variasi pemilihan kursi dan tiket dengan QR.",
+      "Alur yang didokumentasikan adalah susunan layar desain: pencarian tujuan, pengisian perjalanan, informasi pemesanan, dan tiket. Ini bukan bukti pembayaran, backend, atau pemesanan sungguhan. Riset pengguna, proses wireframe, serta hasil pengujian usability belum diberikan sehingga tidak diklaim."
     ],
     "features": [
-      "Homepage mobile",
-      "Pencarian tempat pada desain",
-      "Kartu kota tujuan perjalanan"
+      "Homepage dengan pencarian dan kartu tujuan",
+      "Form desain rute, tanggal, waktu, dan jumlah penumpang",
+      "Variasi layar pemilihan kursi",
+      "Informasi pemesanan serta rincian harga",
+      "Layar tiket digital dengan QR pada canvas"
     ],
     "stack": [
       [
@@ -271,16 +276,19 @@ export const projectDetails = [
       ]
     ],
     "workflow": [
-      "Lihat homepage",
-      "Temukan pencarian tempat",
-      "Lihat kartu tujuan"
+      "Homepage / tujuan",
+      "Isi perjalanan",
+      "Pilih kursi",
+      "Info pemesanan",
+      "Tiket digital"
     ],
     "architecture": [
-      "Susunan homepage",
-      "Hierarki pencarian",
-      "Pilihan kota"
+      "Frame homepage",
+      "Frame Pesan",
+      "Frame Info Pemesanan",
+      "Frame tiket"
     ],
-    "verification": "Desain nonkode. Aset screenshot yang sudah ada ditinjau; tidak ada dependency, endpoint, database, build, atau test aplikasi untuk desain ini. Hubungan seluruh frame/prototype dan proses desain masih perlu konfirmasi.",
+    "verification": "File Figma dibuka dalam mode lihat. Overview canvas dan layar setelah mengetik destinasi ditinjau langsung. Hubungan seluruh interaksi prototype belum diuji end-to-end. Tidak ada dependency, endpoint, database, atau build aplikasi untuk desain ini.",
     "links": [
       {
         "label": "Desain Figma",
@@ -288,10 +296,11 @@ export const projectDetails = [
       }
     ],
     "challenges": [],
-    "status": "Desain UI/UX · dokumentasi terbatas",
+    "status": "Desain Figma · screen ditinjau",
     "design": true,
     "alt": "Preview UI/UX GoTravel: Sistem Tiket Travel",
-    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
+    "role": "Desainer UI/UX."
   },
   {
     "id": 5,
@@ -358,7 +367,8 @@ export const projectDetails = [
     "status": "Demo HTML · source PHP ditinjau",
     "design": false,
     "alt": "Preview Aplikasi Penilaian Rencana Pembelajaran",
-    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
+    "role": "Pembuat aplikasi."
   },
   {
     "id": 6,
@@ -423,7 +433,8 @@ export const projectDetails = [
     "status": "Demo HTML interaktif",
     "design": false,
     "alt": "Preview Kartu Ucapan Ulang Tahun Interaktif",
-    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
+    "role": "Pembuat aplikasi."
   },
   {
     "id": 7,
@@ -519,6 +530,7 @@ export const projectDetails = [
     "status": "Source ditinjau",
     "design": false,
     "alt": "Preview Teduh — Teman Cerita Berbasis AI",
-    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio.",
+    "role": "Pembuat aplikasi."
   }
 ];

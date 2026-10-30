@@ -17,8 +17,11 @@ Audit: 30 Oktober 2026.
 
 ## Peran
 
-BUTUH INPUT: pembagian kontribusi pribadi belum diberikan. Tidak dimasukkan ke konten publik.
+Dikonfirmasi pengguna: Pembuat aplikasi.
 
 ## Batasan
 
 Source lokal hasil audit tidak berarti sama persis dengan deployment publik. Klaim metrik tanpa benchmark tidak dipublikasikan. Tidak ada secret, data akun, isi basis data, atau foto pribadi baru dalam catatan ini.
+
+Snapshot source: commit b9a16d9a49ba04abcd2e5112e5815de607224765.
+Uji UI lokal tambahan: menambah Guppy ke keranjang mengubah kontrol menjadi 1 item.

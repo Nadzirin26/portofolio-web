@@ -17,9 +17,10 @@ Kelima file PHP lolos pemeriksaan sintaks. Demo HTML ditinjau dari source yang d
 
 ## Peran
 
-BUTUH INPUT: pembagian kontribusi pribadi belum diberikan. Tidak dimasukkan ke konten publik.
+Dikonfirmasi pengguna: Pembuat aplikasi.
 
 ## Batasan
 
 Source lokal hasil audit tidak berarti sama persis dengan deployment publik. Klaim metrik tanpa benchmark tidak dipublikasikan. Tidak ada secret, data akun, isi basis data, atau foto pribadi baru dalam catatan ini.
-`nVerifikasi tambahan: homepage PHP HTTP 200. Demo HTML di browser: isi data contoh, lima skor 3, catatan, hasil 100 / Sangat Baik. PDF asli belum diuji end-to-end.
+
+Verifikasi tambahan: homepage PHP HTTP 200. Demo HTML di browser: isi data contoh, lima skor 3, catatan, hasil 100 / Sangat Baik. PDF asli belum diuji end-to-end.

@@ -18,9 +18,11 @@ Audit: 30 Oktober 2026.
 
 ## Peran
 
-BUTUH INPUT: pembagian kontribusi pribadi belum diberikan. Tidak dimasukkan ke konten publik.
+Dikonfirmasi pengguna: Pembuat aplikasi.
 
 ## Batasan
 
 Source lokal hasil audit tidak berarti sama persis dengan deployment publik. Klaim metrik tanpa benchmark tidak dipublikasikan. Tidak ada secret, data akun, isi basis data, atau foto pribadi baru dalam catatan ini.
 Runtime API demo: health HTTP 200; chat HTTP 200, text/event-stream, 18 event SSE untuk pesan pengujian fiktif. Tidak mengirim ke penyedia AI eksternal.
+
+Snapshot source: commit 5f5c0f3aa2ef2f3b496faec4936ec67f42578d5e.

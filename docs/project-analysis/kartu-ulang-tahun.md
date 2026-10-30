@@ -14,7 +14,7 @@ Demo tanpa build atau dependency tambahan. Source halaman, listener keyboard/ges
 
 ## Peran
 
-BUTUH INPUT: pembagian kontribusi pribadi belum diberikan. Tidak dimasukkan ke konten publik.
+Dikonfirmasi pengguna: Pembuat aplikasi.
 
 ## Batasan
 

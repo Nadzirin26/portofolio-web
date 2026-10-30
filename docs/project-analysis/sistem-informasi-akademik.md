@@ -18,8 +18,11 @@ Build lokal lolos. Lint repo menghasilkan 13 error; tidak tersedia script test. 
 
 ## Peran
 
-BUTUH INPUT: pembagian kontribusi pribadi belum diberikan. Tidak dimasukkan ke konten publik.
+Dikonfirmasi pengguna: Pembuat aplikasi.
 
 ## Batasan
 
 Source lokal hasil audit tidak berarti sama persis dengan deployment publik. Klaim metrik tanpa benchmark tidak dipublikasikan. Tidak ada secret, data akun, isi basis data, atau foto pribadi baru dalam catatan ini.
+
+Snapshot source: commit ad72a4119c704c2a8390c522b914cc664302d2da.
+Runtime frontend: halaman Masuk Aplikasi lokal dapat dibuka. Tidak melakukan registrasi atau membaca data akun.

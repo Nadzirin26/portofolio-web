@@ -18,8 +18,10 @@ Analisis statis. flutter pub get, flutter analyze, dan flutter build apk --debug
 
 ## Peran
 
-BUTUH INPUT: pembagian kontribusi pribadi belum diberikan. Tidak dimasukkan ke konten publik.
+Dikonfirmasi pengguna: Pembuat aplikasi.
 
 ## Batasan
 
 Source lokal hasil audit tidak berarti sama persis dengan deployment publik. Klaim metrik tanpa benchmark tidak dipublikasikan. Tidak ada secret, data akun, isi basis data, atau foto pribadi baru dalam catatan ini.
+
+Snapshot source: commit b4111631bf851558d710a8c75b80c7020dba48b2.
