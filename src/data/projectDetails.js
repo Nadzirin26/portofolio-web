@@ -82,5 +82,88 @@ export const projectDetails = [
     "design": false,
     "alt": "Preview Platform Fish It",
     "caption": "Aset tampilan project yang sudah tersedia di portofolio."
+  },
+  {
+    "id": 2,
+    "slug": "warungku",
+    "title": "Aplikasi Mobile POS: WarungKu",
+    "image": "warungku.png",
+    "category": "Mobile Development",
+    "summary": "Aplikasi kasir Flutter untuk mengelola produk, transaksi, persediaan, dan laporan warung.",
+    "paragraphs": [
+      "WarungKu memusatkan aktivitas kasir dan pengelolaan warung dalam aplikasi mobile. Source memuat halaman produk, keranjang, transaksi, inventori, analitik, serta laporan.",
+      "Provider menghubungkan state produk dan keranjang dengan antarmuka. Repository transaksi menulis header serta rincian barang ke Supabase dan menyimpan salinannya pada cache SQLite lokal.",
+      "Alur akun menggunakan Supabase Auth dan profil dengan peran. Source juga menyediakan verifikasi pembayaran QR dan ekspor laporan. Operasi database, kamera, serta cetak belum diuji di perangkat pada audit ini."
+    ],
+    "features": [
+      "Pengelolaan produk dan keranjang",
+      "Login dan pemuatan peran dari profil",
+      "Pencatatan transaksi dan item",
+      "Cache transaksi lokal",
+      "Pemindaian barcode serta ekspor laporan pada source"
+    ],
+    "stack": [
+      [
+        "Flutter / Dart",
+        "Mobile",
+        "Menyusun halaman kasir, katalog, inventori, dan laporan."
+      ],
+      [
+        "Provider",
+        "State",
+        "Memberi notifikasi perubahan auth, produk, dan keranjang ke UI."
+      ],
+      [
+        "Supabase Flutter",
+        "Backend",
+        "Mengakses autentikasi, profil, produk, dan transaksi melalui client Supabase."
+      ],
+      [
+        "sqflite",
+        "Cache lokal",
+        "Menyimpan transaksi dan produk melalui local store."
+      ],
+      [
+        "mobile_scanner",
+        "Perangkat",
+        "Mengakses pemindaian barcode pada halaman scanner."
+      ],
+      [
+        "pdf / printing",
+        "Laporan",
+        "Menyusun dan mencetak laporan melalui halaman ekspor."
+      ]
+    ],
+    "workflow": [
+      "Masuk / pilih produk",
+      "Isi keranjang",
+      "Pilih pembayaran",
+      "Simpan transaksi",
+      "Lihat laporan"
+    ],
+    "architecture": [
+      "UI Flutter",
+      "Provider",
+      "Repository",
+      "Supabase + cache SQLite"
+    ],
+    "verification": "Analisis statis. flutter pub get, flutter analyze, dan flutter build apk --debug dicoba; proses dependency gagal menulis active_roots pada cache Pub. Build/runtime perangkat belum diverifikasi. Tidak ditemukan test Dart pada repo yang diperiksa. Backend Supabase tidak dimodifikasi.",
+    "links": [
+      {
+        "label": "GitHub",
+        "href": "https://github.com/Nadzirin26/warungku"
+      },
+      {
+        "label": "Video presentasi",
+        "href": "https://youtu.be/HCL8jV37xwU"
+      }
+    ],
+    "challenges": [
+      "Repository menyimpan salinan transaksi lokal sehingga data yang berhasil diambil dapat dipakai sebagai cache."
+    ],
+    "status": "Analisis statis · runtime belum diverifikasi",
+    "design": false,
+    "alt": "Preview Aplikasi Mobile POS: WarungKu",
+    "caption": "Aset tampilan project yang sudah tersedia di portofolio."
   }
 ];

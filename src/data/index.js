@@ -34,7 +34,7 @@ export const projects = [
     title: "Aplikasi Mobile POS: WarungKu",
     category: "Mobile App Development",
     image: "https://images.unsplash.com/photo-1555421689-491a97ff2040?q=80&w=800&auto=format&fit=crop",
-    description: "Aplikasi kasir (Point of Sale) berbasis mobile untuk membantu digitalisasi dan pembukuan warung konvensional. Mengintegrasikan Supabase (database cloud) dan PostgreSQL, scanner barcode perangkat, serta sistem pembayaran instan simulasi QR Code untuk meningkatkan efisiensi waktu transaksi sebesar 40%. (Project Kolaboratif / Capstone)",
+    description: "Aplikasi kasir (Point of Sale) berbasis mobile untuk membantu digitalisasi dan pembukuan warung konvensional. Mengintegrasikan Supabase (database cloud) dan PostgreSQL, scanner barcode perangkat, serta sistem pembayaran instan simulasi QR Code untuk mendukung pencatatan transaksi. (Project Kolaboratif / Capstone)",
     tech: ["Flutter", "Provider", "Supabase", "PostgreSQL"],
     github: "https://github.com/Nadzirin26/warungku.git",
     demo: "https://youtu.be/HCL8jV37xwU?si=a-JArhm0oY6i5me8",
