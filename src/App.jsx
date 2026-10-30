@@ -1,3 +1,4 @@
+import RestoreProjectPosition from './components/RestoreProjectPosition';
 import Navbar from './components/Navbar';
 import Hero from './sections/Hero';
 import About from './sections/About';
@@ -14,6 +15,7 @@ export default function App() {
   return (
     <>
       <a className="skip-link" href="#main">Lewati ke konten</a>
+      <RestoreProjectPosition />
       <Navbar />
       <main id="main" className="page-shell">
         <Hero />

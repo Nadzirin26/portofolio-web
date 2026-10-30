@@ -1,3 +1,4 @@
+import { projectReturnUrl } from '../lib/projectReturn';
 import { useEffect } from 'react';
 import { FiArrowLeft, FiArrowUpRight } from 'react-icons/fi';
 
@@ -13,10 +14,10 @@ export default function ProjectDetail({ project }) {
     meta?.setAttribute('content', project?.summary || 'Project yang diminta tidak ditemukan.');
     return () => { if (previous) meta?.setAttribute('content', previous); };
   }, [project]);
-  if (!project) return <main className="page-shell detail-page"><a className="button" href="/#projects"><FiArrowLeft aria-hidden="true" />Kembali ke project</a><h1>Project tidak ditemukan.</h1><p>Pilih project melalui halaman utama portofolio.</p></main>;
+  if (!project) return <main className="page-shell detail-page"><a className="button" href={project ? projectReturnUrl(project.id) : '/#projects'}><FiArrowLeft aria-hidden="true" />Kembali ke project</a><h1>Project tidak ditemukan.</h1><p>Pilih project melalui halaman utama portofolio.</p></main>;
   return <>
     <a className="skip-link" href="#detail-main">Lewati ke konten</a>
-    <header className="page-shell detail-nav"><a className="wordmark" href="/">ASN.</a><a className="button" href="/#projects"><FiArrowLeft aria-hidden="true" />Kembali ke project</a></header>
+    <header className="page-shell detail-nav"><a className="wordmark" href="/">ASN.</a><a className="button" href={project ? projectReturnUrl(project.id) : '/#projects'}><FiArrowLeft aria-hidden="true" />Kembali ke project</a></header>
     <main id="detail-main" className="page-shell detail-page">
       <header className="detail-header"><p className="eyebrow">{project.category} / Case study</p><h1>{project.title}</h1><p className="detail-status">{project.status}</p><p className="detail-lead">{project.summary}</p><div className="action-row">{project.links.map(link => <a key={link.href} className="button" href={link.href} target="_blank" rel="noopener noreferrer">{link.label}<FiArrowUpRight aria-hidden="true" /></a>)}</div></header>
       <figure className="detail-preview"><img src={`/projects/${project.image}`} alt={project.alt} /><figcaption>{project.caption}</figcaption></figure>
@@ -28,7 +29,7 @@ export default function ProjectDetail({ project }) {
       {project.architecture.length > 0 && <Flow title={project.design ? 'Alur desain yang terlihat' : 'Arsitektur & alur sistem'} steps={project.architecture} />}
       {project.challenges.length > 0 && <section className="detail-block"><h2>Tantangan yang ditangani dalam implementasi</h2>{project.challenges.map(c => <p key={c}>{c}</p>)}</section>}
       <section className="detail-block"><h2>Cakupan verifikasi</h2><p>{project.verification}</p></section>
-      <a className="button button-primary" href="/#projects"><FiArrowLeft aria-hidden="true" />Lihat project lainnya</a>
+      <a className="button button-primary" href={project ? projectReturnUrl(project.id) : '/#projects'}><FiArrowLeft aria-hidden="true" />Lihat project lainnya</a>
     </main>
   </>;
 }

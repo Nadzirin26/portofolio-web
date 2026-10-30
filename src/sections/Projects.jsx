@@ -1,3 +1,4 @@
+import { rememberProjectPosition } from '../lib/projectReturn';
 import { projects } from '../data';
 import { FiArrowUpRight, FiGithub, FiExternalLink, FiPlay, FiFigma, FiCode } from 'react-icons/fi';
 import Reveal from '../components/Reveal';
@@ -22,7 +23,7 @@ export default function Projects() {
       </Reveal>
       <div className="project-list">
         {projects.map((project, index) => (
-          <Reveal as="article" className="project" key={project.id} aria-labelledby={`project-${project.id}`}>
+          <Reveal as="article" id={`project-card-${project.id}`} className="project" key={project.id} aria-labelledby={`project-${project.id}`}>
             <div className="project-visual-column">
               <span className="project-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
               <figure className={`project-preview project-preview-${index + 1}`}>
@@ -40,7 +41,7 @@ export default function Projects() {
               <ul className="project-technologies" aria-label="Teknologi proyek">{project.tech.map(tech => <li key={tech}>{tech}</li>)}</ul>
               {project.implementationNote && <p className="project-implementation-note">{project.implementationNote}</p>}
               <div className="action-row">
-                {projectDetails.find(p => p.id === project.id) && <a className="button" href={`/projects/${projectDetails.find(p => p.id === project.id).slug}`}>Lihat Detail <FiArrowUpRight aria-hidden="true" /></a>}
+                {projectDetails.find(p => p.id === project.id) && <a className="button" data-detail-link onClick={event => rememberProjectPosition(event, project.id)} href={`/projects/${projectDetails.find(p => p.id === project.id).slug}`}>Lihat Detail <FiArrowUpRight aria-hidden="true" /></a>}
                 {project.demo ? <>
                   {project.github && <a className="button" href={project.github} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelGithub}: ${project.title} (tab baru)`}><FiGithub aria-hidden="true" />{project.labelGithub}</a>}
                   <a className="button button-primary" href={project.demo} target="_blank" rel="noopener noreferrer" aria-label={`${project.labelDemo}: ${project.title} (tab baru)`}>{index === 1 ? <FiPlay aria-hidden="true" /> : <FiExternalLink aria-hidden="true" />}{project.labelDemo}</a>
